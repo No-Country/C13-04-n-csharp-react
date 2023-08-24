@@ -79,8 +79,13 @@ function Heading3 (){
 
                         </div>
                     </div>
-                    <div className="col-md-6">
-                        <h1>Bye</h1>
+                    <div className="col-md-6 ml-0">
+                        <img 
+                            src="https://media.tenor.com/QqgcGkB7X50AAAAC/bitcoin-chart-bitcoin-zoom.gif"
+                            id="gif"
+                            className="ml-0"
+                            alt="...">
+                            </img>
                     </div>
                 </div>
             </div>
