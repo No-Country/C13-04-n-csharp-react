@@ -4,22 +4,22 @@ function CardConvertTraditional() {
       {/*<!--begin::Input group-->*/}
       <div className="form-floating border rounded mb-7">
         <select
-          className="form-select form-select-transparent"
+          className="form-select "
           id="kt_forms_widget_1_select_2"
         >
-          <option defaultValue="0" data-kt-select2-icon="/coins/bitcoin.svg">
+          <option defaultValue="0" >
             Bitcoin/BTC
           </option>
-          <option defaultValue="1" data-kt-select2-icon="/coins/ethereum.svg">
+          <option defaultValue="1" >
             Ethereum/ETH
           </option>
-          <option defaultValue="2" data-kt-select2-icon="/coins/filecoin.svg">
+          <option defaultValue="2" >
             Filecoin/FLE
           </option>
-          <option defaultValue="3" data-kt-select2-icon="/coins/chainlink.svg">
+          <option defaultValue="3" >
             Chainlink/CIN
           </option>
-          <option defaultValue="4" data-kt-select2-icon="/coins/binance.svg">
+          <option defaultValue="4" >
             Binance/BCN
           </option>
         </select>
