@@ -74,3 +74,4 @@ C:\Users\Lautaro\source\repos\No-Country\C13-04-n-csharp-react\Backend\Cripto-di
 C:\Users\Lautaro\source\repos\No-Country\C13-04-n-csharp-react\Backend\Cripto-divisas\obj\Debug\net7.0\Cripto-divisas.pdb
 C:\Users\Lautaro\source\repos\No-Country\C13-04-n-csharp-react\Backend\Cripto-divisas\obj\Debug\net7.0\Cripto-divisas.genruntimeconfig.cache
 C:\Users\Lautaro\source\repos\No-Country\C13-04-n-csharp-react\Backend\Cripto-divisas\obj\Debug\net7.0\ref\Cripto-divisas.dll
+C:\Users\Lautaro\source\repos\No-Country\C13-04-n-csharp-react\Backend\Cripto-divisas\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
