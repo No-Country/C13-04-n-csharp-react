@@ -1,3 +1,4 @@
+import Heading3 from "@/components/Heading3/heading3";
 import SectionInfo from "@/components/convert/0-sections/SectionInfo";
 import SectionConvert from "@/components/convert/0-sections/sectionConvert";
 
@@ -18,6 +19,8 @@ function ConvertPage() {
                     <SectionInfo />
                     {/* seccion del convertidor */}
                     <SectionConvert />
+                    {/* seccion heading */}
+                    <Heading3 />
                   </div>
                 </div>
               </div>

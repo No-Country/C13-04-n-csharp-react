@@ -10,7 +10,7 @@ function Navbar() {
       style={{ backgroundColor: "#524F4F" }}>
       <div className="container-fluid">
         <Link className="navbar-brand"
-          href="/">
+          href="/convert">
           <img src="/images/Picsart_23-08-23_15-01-14-205.png"
             alt="Logo"
             width="70rem"
