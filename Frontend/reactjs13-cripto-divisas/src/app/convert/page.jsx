@@ -1,3 +1,6 @@
+import CardConvert from "@/components/convert/Cards/CardConvert";
+import CardConvertTraditional from "@/components/convert/Cards/CardConvertTraditional";
+import CardCripto from "@/components/convert/Cards/CardCripto";
 import React from "react";
 
 function ConvertPage() {
@@ -16,9 +19,7 @@ function ConvertPage() {
                   id="kt_app_toolbar_container"
                   className="app-container container-xxl d-flex flex-stack"
                 ></div>
-                {/*<!--end::Toolbar container-->*/}
               </div>
-              {/*<!--end::Toolbar-->*/}
               {/*<!--begin::Content-->*/}
               <div
                 id="kt_app_content"
@@ -37,428 +38,127 @@ function ConvertPage() {
                       <div className="row g-5 g-xl-10 justify-content-center">
                         {/*<!--begin::Col-->*/}
                         <div className="col-md-3">
-                          {/*<!--begin::Card widget 11-->*/}
-                          <div
-                            className="card card-flush h-xl-80"
+                          <CardCripto
+                            title="Bitcoin"
+                            abbr="BTC"
+                            image="/shapes/bitcoin.svg"
                             style={{ backgroundColor: "#F6E5CA" }}
-                          >
-                            {/*<!--begin::Header-->*/}
-                            <div className="card-header flex-nowrap">
-                              {/*<!--begin::Title-->*/}
-                              <h3 className="card-title align-items-start flex-column">
-                                <span className="card-label fw-bold fs-4 text-gray-800">
-                                  Bitcoin
-                                </span>
-                                <span className="mt-1 fw-semibold fs-7">
-                                  36,668 USD for 1 BTC
-                                </span>
-                              </h3>
-                              {/*<!--end::Title-->*/}
-                            </div>
-                            {/*<!--end::Header-->*/}
-                            {/*<!--begin::Body-->*/}
-                            <div className="card-body text-center">
-                              {/*<!--begin::Image-->*/}
-                              <img
-                                src="/shapes/bitcoin.svg"
-                                className="h-80px"
-                                alt=""
-                              />
-                              {/*<!--end::Image-->*/}
-                              {/*<!--begin::Section-->*/}
-                              <div className="text-start">
-                                <span className="d-block fw-bold fs-3 text-gray-800">
-                                  0.44554576 BTC
-                                </span>
-                                <span className="mt-1 fw-semibold fs-5">
-                                  19,335,45 USD
-                                </span>
-                              </div>
-                              {/*<!--end::Section-->*/}
-                            </div>
-                            {/*<!--end::Body-->*/}
-                          </div>
-                          {/*<!--end::Card widget 11-->*/}
+                          />
                         </div>
-                        {/*<!--end::Col-->*/}
                         {/*<!--begin::Col-->*/}
                         <div className="col-md-3">
-                          {/*<!--begin::Card widget 11-->*/}
-                          <div
-                            className="card card-flush h-xl-100"
+                          <CardCripto
+                            title="Etherium"
+                            abbr="ETH"
+                            image="/shapes/ethereum.svg"
                             style={{ backgroundColor: "#F3D6EF" }}
-                          >
-                            {/*<!--begin::Header-->*/}
-                            <div className="card-header flex-nowrap">
-                              {/*<!--begin::Title-->*/}
-                              <h3 className="card-title align-items-start flex-column">
-                                <span className="card-label fw-bold fs-4 text-gray-800">
-                                  Etherium
-                                </span>
-                                <span className="mt-1 fw-semibold fs-7">
-                                  325,035 USD for 1 ETH
-                                </span>
-                              </h3>
-                              {/*<!--end::Title-->*/}
-                            </div>
-                            {/*<!--end::Header-->*/}
-                            {/*<!--begin::Body-->*/}
-                            <div className="card-body text-center">
-                              {/*<!--begin::Image-->*/}
-                              <img
-                                src="/shapes/ethereum.svg"
-                                className="h-80px"
-                                alt=""
-                              />
-                              {/*<!--end::Image-->*/}
-                              {/*<!--begin::Section-->*/}
-                              <div className="text-start">
-                                <span className="d-block fw-bold fs-3 text-gray-800">
-                                  29.33460000 ETH
-                                </span>
-                                <span className="mt-1 fw-semibold fs-5">
-                                  7,336,00 USD
-                                </span>
-                              </div>
-                              {/*<!--end::Section-->*/}
-                            </div>
-                            {/*<!--end::Body-->*/}
-                          </div>
-                          {/*<!--end::Card widget 11-->*/}
+                          />
                         </div>
-                        {/*<!--end::Col-->*/}
                         {/*<!--begin::Col-->*/}
                         <div className="col-md-3">
-                          {/*<!--begin::Card widget 11-->*/}
-                          <div
-                            className="card card-flush h-xl-80"
+                          <CardCripto
+                            title="Dogecoin"
+                            abbr="DOGE"
+                            image="/shapes/dogecoin.svg"
                             style={{ backgroundColor: "#BFDDE3" }}
-                          >
-                            {/*<!--begin::Header-->*/}
-                            <div className="card-header flex-nowrap">
-                              {/*<!--begin::Title-->*/}
-                              <h3 className="card-title align-items-start flex-column">
-                                <span className="card-label fw-bold fs-4 text-gray-800">
-                                  Dogecoin
-                                </span>
-                                <span className="mt-1 fw-semibold fs-7">
-                                  0.12,045 USD for 1 DOGE
-                                </span>
-                              </h3>
-                              {/*<!--end::Title-->*/}
-                            </div>
-                            {/*<!--end::Header-->*/}
-                            {/*<!--begin::Body-->*/}
-                            <div className="card-body text-center">
-                              {/*<!--begin::Image-->*/}
-                              <img
-                                src="/shapes/dogecoin.svg"
-                                className="h-80px"
-                                alt=""
-                              />
-                              {/*<!--end::Image-->*/}
-                              {/*<!--begin::Section-->*/}
-                              <div className="text-start">
-                                <span className="d-block fw-bold fs-3 text-gray-800">
-                                  4703.7589 DOGE
-                                </span>
-                                <span className="mt-1 fw-semibold fs-5">
-                                  503,005,56 USD
-                                </span>
-                              </div>
-                              {/*<!--end::Section-->*/}
-                            </div>
-                            {/*<!--end::Body-->*/}
-                          </div>
-                          {/*<!--end::Card widget 11-->*/}
+                          />
                         </div>
-                        {/*<!--end::Col-->*/}
                       </div>
-                      {/*<!--end::Row-->*/}
                     </div>
-                    {/*<!--end::Col-->*/}
                     {/*<!--begin::Col-->*/}
                     <div className="col-xxl-4">
-                      <div className="row justify-content-center">
-                        <div className="col-12 col-md-6">
-                          {/*<!--begin::Forms widget 1-->*/}
-                          <div className="card h-xl-80">
-                            {/*<!--begin::Header-->*/}
-                            <div className="card-header position-relative min-h-50px p-0 border-bottom-2">
-                              {/*<!--begin::Nav-->*/}
-                              <ul className="nav nav-pills nav-pills-custom d-flex position-relative w-100">
-                                {/*<!--begin::Item-->*/}
-                                <li className="nav-item mx-0 p-0 w-50">
-                                  {/*<!--begin::Link-->*/}
-                                  <a
-                                    className="nav-link btn btn-color-muted active border-0 h-100 px-0"
-                                    data-bs-toggle="pill"
-                                    id="kt_forms_widget_1_tab_1"
-                                    href="#kt_forms_widget_1_tab_content_1"
-                                  >
-                                    {/*<!--begin::Subtitle-->*/}
-                                    <span className="nav-text fw-bold fs-4 mb-3">
-                                      Criptomonedas
-                                    </span>
-                                    {/*<!--end::Subtitle-->*/}
-                                    {/*<!--begin::Bullet-->*/}
-                                    <span className="bullet-custom position-absolute z-index-2 w-100 h-2px top-100 bottom-n100 bg-primary rounded"></span>
-                                    {/*<!--end::Bullet-->*/}
-                                  </a>
-                                  {/*<!--end::Link-->*/}
-                                </li>
-                                {/*<!--end::Item-->*/}
-                                {/*<!--begin::Item-->*/}
-                                <li className="nav-item mx-0 px-0 w-50">
-                                  {/*<!--begin::Link-->*/}
-                                  <a
-                                    className="nav-link btn btn-color-muted border-0 h-100 px-0"
-                                    data-bs-toggle="pill"
-                                    id="kt_forms_widget_1_tab_2"
-                                    href="#kt_forms_widget_1_tab_content_2"
-                                  >
-                                    {/*<!--begin::Subtitle-->*/}
-                                    <span className="nav-text fw-bold fs-4 mb-3">
-                                      Divisas
-                                    </span>
-                                    {/*<!--end::Subtitle-->*/}
-                                    {/*<!--begin::Bullet-->*/}
-                                    <span className="bullet-custom position-absolute z-index-2 w-100 h-2px top-100 bottom-n100 bg-primary rounded"></span>
-                                    {/*<!--end::Bullet-->*/}
-                                  </a>
-                                  {/*<!--end::Link-->*/}
-                                </li>
-                                {/*<!--end::Item-->*/}
-                              </ul>
-                              {/*<!--end::Nav-->*/}
-                            </div>
-                            {/*<!--end::Header-->*/}
-                            {/*<!--begin::Body-->*/}
-                            <div className="card-body">
-                              {/*<!--begin::Tab Content-->*/}
-                              <div className="tab-content">
-                                {/*<!--begin::Tap pane-->*/}
-                                <div
-                                  className="tab-pane fade active show"
-                                  id="kt_forms_widget_1_tab_content_1"
-                                >
-                                  {/*<!--begin::Input group-->*/}
-                                  <div className="form-floating border border-gray-300 rounded mb-7">
-                                    <select
-                                      className="form-select form-select-transparent"
-                                      id="kt_forms_widget_1_select_1"
-                                    >
-                                      <option
-                                        defaultValue="0"
-                                        data-kt-select2-icon="/coins/bitcoin.svg"
-                                      >
-                                        Bitcoin/BTC
-                                      </option>
-                                      <option
-                                        defaultValue="1"
-                                        data-kt-select2-icon="/coins/ethereum.svg"
-                                      >
-                                        Ethereum/ETH
-                                      </option>
-                                      <option
-                                        defaultValue="2"
-                                        data-kt-select2-icon="/coins/filecoin.svg"
-                                      >
-                                        Filecoin/FLE
-                                      </option>
-                                      <option
-                                        defaultValue="3"
-                                        data-kt-select2-icon="/coins/chainlink.svg"
-                                      >
-                                        Chainlink/CIN
-                                      </option>
-                                      <option
-                                        defaultValue="4"
-                                        data-kt-select2-icon="/coins/binance.svg"
-                                      >
-                                        Binance/BCN
-                                      </option>
-                                    </select>
-                                    <label htmlFor="floatingInputValue">
-                                      Nombre Moneda
-                                    </label>
-                                  </div>
-                                  {/*<!--end::Input group-->*/}
-                                  {/*<!--begin::Row-->*/}
-                                  <div className="row mb-7">
-                                    {/*<!--begin::Col-->*/}
-                                    <div className="col-6">
-                                      {/*<!--begin::Input group-->*/}
-                                      <div className="form-floating">
-                                        <input
-                                          type="email"
-                                          className="form-control text-gray-800 fw-bold"
-                                          placeholder="00.0"
-                                          id="floatingInputValue"
-                                          defaultValue="$230.00"
-                                        />
-                                        <label htmlFor="floatingInputValue">
-                                          Precio(USD)
-                                        </label>
-                                      </div>
-                                      {/*<!--end::Input group-->*/}
-                                    </div>
-                                    {/*<!--end::Col-->*/}
-                                    {/*<!--begin::Col-->*/}
-                                    <div className="col-6">
-                                      {/*<!--begin::Input group-->*/}
-                                      <div className="form-floating">
-                                        <input
-                                          type="email"
-                                          className="form-control text-gray-800 fw-bold"
-                                          placeholder="00.0"
-                                          id="floatingInputValue"
-                                          defaultValue="$0,00000032"
-                                        />
-                                        <label htmlFor="floatingInputValue">
-                                          Precio(BTC)
-                                        </label>
-                                      </div>
-                                      {/*<!--end::Input group-->*/}
-                                    </div>
-                                    {/*<!--end::Col-->*/}
-                                  </div>
-                                  {/*<!--end::Row-->*/}
-                                  {/*<!--begin::Action-->*/}
-                                  <div className="d-flex align-items-end">
-                                    <a
-                                      href="#"
-                                      data-bs-toggle="modal"
-                                      data-bs-target="#kt_modal_top_up_wallet"
-                                      className="btn btn-primary fs-3 w-100"
-                                    >
-                                      Convertir
-                                    </a>
-                                  </div>
-                                  {/*<!--end::Action-->*/}
-                                </div>
-                                {/*<!--end::Tap pane-->*/}
-                                {/*<!--begin::Tap pane-->*/}
-                                <div
-                                  className="tab-pane fade"
-                                  id="kt_forms_widget_1_tab_content_2"
-                                >
-                                  {/*<!--begin::Input group-->*/}
-                                  <div className="form-floating border rounded mb-7">
-                                    <select
-                                      className="form-select form-select-transparent"
-                                      id="kt_forms_widget_1_select_2"
-                                    >
-                                      <option
-                                        defaultValue="0"
-                                        data-kt-select2-icon="/coins/bitcoin.svg"
-                                      >
-                                        Bitcoin/BTC
-                                      </option>
-                                      <option
-                                        defaultValue="1"
-                                        data-kt-select2-icon="/coins/ethereum.svg"
-                                      >
-                                        Ethereum/ETH
-                                      </option>
-                                      <option
-                                        defaultValue="2"
-                                        data-kt-select2-icon="/coins/filecoin.svg"
-                                      >
-                                        Filecoin/FLE
-                                      </option>
-                                      <option
-                                        defaultValue="3"
-                                        data-kt-select2-icon="/coins/chainlink.svg"
-                                      >
-                                        Chainlink/CIN
-                                      </option>
-                                      <option
-                                        defaultValue="4"
-                                        data-kt-select2-icon="/coins/binance.svg"
-                                      >
-                                        Binance/BCN
-                                      </option>
-                                    </select>
-                                    <label htmlFor="floatingInputValue">
-                                      Nombre Moneda
-                                    </label>
-                                  </div>
-                                  {/*<!--end::Input group-->*/}
-                                  {/*<!--begin::Row-->*/}
-                                  <div className="row mb-7">
-                                    {/*<!--begin::Col-->*/}
-                                    <div className="col-6">
-                                      {/*<!--begin::Input group-->*/}
-                                      <div className="form-floating">
-                                        <input
-                                          type="email"
-                                          className="form-control text-gray-800 fw-bold"
-                                          placeholder="00.0"
-                                          id="floatingInputValue"
-                                          defaultValue="$0,0000005"
-                                        />
-                                        <label htmlFor="floatingInputValue">
-                                          Precio(BTC)
-                                        </label>
-                                      </div>
-                                      {/*<!--end::Input group-->*/}
-                                    </div>
-                                    {/*<!--end::Col-->*/}
-                                    {/*<!--begin::Col-->*/}
-                                    <div className="col-6">
-                                      {/*<!--begin::Input group-->*/}
-                                      <div className="form-floating">
-                                        <input
-                                          type="email"
-                                          className="form-control text-gray-800 fw-bold"
-                                          placeholder="00.0"
-                                          id="floatingInputValue"
-                                          defaultValue="$1230.00"
-                                        />
-                                        <label htmlFor="floatingInputValue">
-                                          Precio(USD)
-                                        </label>
-                                      </div>
-                                      {/*<!--end::Input group-->*/}
-                                    </div>
-                                    {/*<!--end::Col-->*/}
-                                  </div>
-                                  {/*<!--end::Row-->*/}
-                                  {/*<!--begin::Action-->*/}
-                                  <div className="d-flex align-items-end">
-                                    <a
-                                      href="#"
-                                      data-bs-toggle="modal"
-                                      data-bs-target="#kt_modal_top_up_wallet"
-                                      className="btn btn-primary fs-3 w-100"
-                                    >
-                                      Convertir
-                                    </a>
-                                  </div>
-                                  {/*<!--end::Action-->*/}
-                                </div>
-                                {/*<!--end::Tap pane-->*/}
-                              </div>
-                              {/*<!--end::Tab Content-->*/}
-                            </div>
-                            {/*<!--end: Card Body-->*/}
-                          </div>
-                          {/*<!--end::Forms widget 1-->*/}
+                      {/*<!--begin::Forms widget 1-->*/}
+                      <div className="card h-xl-60">
+                        {/*<!--begin::Header-->*/}
+                        <div className="card-header position-relative min-h-50px p-0 border-bottom-2">
+                          {/*<!--begin::Nav-->*/}
+                          <ul className="nav nav-pills nav-pills-custom d-flex position-relative w-100">
+                            {/*<!--begin::Item-->*/}
+                            <li className="nav-item mx-0 p-0 w-50">
+                              {/*<!--begin::Link-->*/}
+                              <a
+                                className="nav-link btn btn-color-muted active border-0 h-100 px-0"
+                                data-bs-toggle="pill"
+                                id="kt_forms_widget_1_tab_1"
+                                href="#kt_forms_widget_1_tab_content_1"
+                              >
+                                {/*<!--begin::Subtitle-->*/}
+                                <span className="nav-text fw-bold fs-4 mb-3">
+                                  Cripto Convert
+                                </span>
+                                {/*<!--begin::Bullet-->*/}
+                                <span className="bullet-custom position-absolute z-index-2 w-100 h-2px top-100 bottom-n100 bg-primary rounded"></span>
+                              </a>
+                            </li>
+                            {/*<!--begin::Item-->*/}
+                            <li className="nav-item mx-0 px-0 w-50">
+                              {/*<!--begin::Link-->*/}
+                              <a
+                                className="nav-link btn btn-color-muted border-0 h-100 px-0"
+                                data-bs-toggle="pill"
+                                id="kt_forms_widget_1_tab_2"
+                                href="#kt_forms_widget_1_tab_content_2"
+                              >
+                                {/*<!--begin::Subtitle-->*/}
+                                <span className="nav-text fw-bold fs-4 mb-3">
+                                  Tradicional
+                                </span>
+                                {/*<!--begin::Bullet-->*/}
+                                <span className="bullet-custom position-absolute z-index-2 w-100 h-2px top-100 bottom-n100 bg-primary rounded"></span>
+                              </a>
+                            </li>
+                          </ul>
                         </div>
+                        {/*<!--begin::Body-->*/}
+                        <div className="card-body">
+                          {/*<!--begin::Tab Content-->*/}
+                          <div className="tab-content">
+                            {/*<!--begin::Tap pane-->*/}
+                            <div
+                              className="tab-pane fade active show"
+                              id="kt_forms_widget_1_tab_content_1"
+                            >
+                              {/*<!--begin::Row-->*/}
+                              <div className="row g-5 g-xl-10 justify-content-evenly">
+                                {/*<!--begin::Col-->*/}
+                                <div className="col-md-3">
+                                  <CardConvert
+                                    abbr="EUR"
+                                    style={{ backgroundColor: "#d8f8e1" }}
+                                  />
+                                </div>
+                                {/*<!--begin::Col-->*/}
+                                <div className="col-md-3">
+                                  <CardConvert
+                                    abbr="BTC"
+                                    style={{ backgroundColor: "#d8f8e1" }}
+                                  />
+                                </div>
+                              </div>
+
+                              {/*<!--begin::Row-->*/}
+                              <div className="row g-5 g-xl-10 justify-content-center mt-2">
+                                {/*<!--begin::Col-->*/}
+                                <div className="col-md-3">
+                                  <CardConvert
+                                    abbr="USD"
+                                    style={{ backgroundColor: "#d8f8e1" }}
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            {/*<!--begin::Tap pane-->*/}
+                            <CardConvertTraditional />
+                          </div>
+                        </div>
+                        {/*<!--end: Card Body-->*/}
                       </div>
                     </div>
-                    {/*<!--end::Col-->*/}
                   </div>
-                  {/*<!--end::Row-->*/}
                 </div>
-                {/*<!--end::Content container-->*/}
               </div>
-              {/*<!--end::Content-->*/}
             </div>
-            {/*<!--end::Content wrapper-->*/}
           </div>
-          {/*<!--end:::Main-->*/}
         </div>
       </div>
     </div>
