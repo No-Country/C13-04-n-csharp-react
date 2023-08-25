@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import "bootstrap/dist/js/bootstrap.min.js";
 import { FaUser, FaSearch } from "react-icons/fa";
 
 
