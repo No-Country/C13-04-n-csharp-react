@@ -49,7 +49,7 @@ function CardConvertTraditional() {
               type="email"
               className="form-control text-gray-800 fw-bold"
               placeholder="00.0"
-              id="floatingInputValue"
+              id="floatingInputValue2"
               defaultValue="$1230.00"
             />
             <label htmlFor="floatingInputValue">Precio(USD)</label>

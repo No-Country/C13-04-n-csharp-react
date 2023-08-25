@@ -1,48 +1,59 @@
 "use client";
 import Link from "next/link";
+import { useEffect } from "react";
 import { FaUser, FaSearch } from "react-icons/fa";
 
-
 function Navbar() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "globals.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
-    <nav className="navbar navbar-expand-lg "
-      style={{ backgroundColor: "#524F4F" }}>
+    <nav
+      className="navbar navbar-expand-lg "
+      style={{ backgroundColor: "#524F4F" }}
+    >
       <div className="container-fluid">
-        <Link className="navbar-brand"
-          href="/convert">
-          <img src="/images/Picsart_23-08-23_15-01-14-205.png"
+        <Link className="navbar-brand" href="/">
+          <img
+            src="/images/Picsart_23-08-23_15-01-14-205.png"
             alt="Logo"
             width="70rem"
             className="d-inline-block align-text-top"
           />
         </Link>
 
-
-        <button className="navbar-toggler align-self-center"
+        <button
+          className="navbar-toggler align-self-center"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation">
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-
         <div className="collapse navbar-collapse " id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item mx-5" >
+            <li className="nav-item mx-5">
               <Link
                 className="nav-link active"
                 aria-current="page"
-                href="/convert"
+                href="/"
                 style={{ color: "#FF7C03", fontSize: "18px" }}
               >
                 Convertidor
               </Link>
             </li>
             <li className="nav-item mx-5">
-              <Link className="nav-link" href="/news"
+              <Link
+                className="nav-link"
+                href="/news"
                 style={{ color: "#FF7C03", fontSize: "18px" }}
               >
                 Noticias
@@ -59,10 +70,11 @@ function Navbar() {
               >
                 Como usar
               </Link>
-              <ul className="dropdown-menu"
-                style={{ background: "#CAC7C7" }}>
+              <ul className="dropdown-menu" style={{ background: "#CAC7C7" }}>
                 <li>
-                  <Link className="dropdown-item" href="#"
+                  <Link
+                    className="dropdown-item"
+                    href="#"
                     style={{ color: "#FF7C03", fontSize: "18px" }}
                   >
                     Criptomonedas
@@ -70,7 +82,9 @@ function Navbar() {
                 </li>
                 <hr className="dropdown-divider m-0" />
                 <li>
-                  <Link className="dropdown-item" href="#"
+                  <Link
+                    className="dropdown-item"
+                    href="#"
                     style={{ color: "#FF7C03", fontSize: "18px" }}
                   >
                     Divisas
@@ -119,15 +133,15 @@ function Navbar() {
           </form>
 
           <style jsx>{`
-                .custom-button {
-                height: 2.7rem;
-                font-size: 18px;
-                background: #A7A7A7;
-                color: #FF7C03;
-                display: flex;
-                align-items: center;
-                }
-              `}</style>
+            .custom-button {
+              height: 2.7rem;
+              font-size: 18px;
+              background: #a7a7a7;
+              color: #ff7c03;
+              display: flex;
+              align-items: center;
+            }
+          `}</style>
 
           <div className="d-flex ms-auto align-items-center">
             <button
@@ -139,7 +153,6 @@ function Navbar() {
             </button>
           </div>
         </div>
-
       </div>
     </nav>
   );
