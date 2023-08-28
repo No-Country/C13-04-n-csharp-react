@@ -42,10 +42,10 @@ function CardConvert(props) {
       {/*<!--begin::Body-->*/}
       <div className="card-body text-center p-3">
         <input
+          step={"any"}
           value={props.inputValue}
           type="number"
           className="form-control rounded-pill w-75 d-inline-block p-3"
-          readOnly={props.readOnly}
           onChange={handleInputChange}
         />
       </div>

@@ -13,6 +13,9 @@ function SectionConvert() {
 
   const handleSumbmit = (e) => {
     e.preventDefault();
+
+    setInputValue2("");
+    setInputValue3("");
     const result = coinConverter(
       inputValue,
       selectValue,
@@ -21,6 +24,35 @@ function SectionConvert() {
     );
     setInputValue2(result[selectValue2]);
     setInputValue3(result[selectValue3]);
+  };
+
+  const handleSumbmit2 = (e) => {
+    e.preventDefault();
+    setInputValue("");
+    setInputValue3("");
+    const result = coinConverter(
+      inputValue2,
+      selectValue2,
+      selectValue,
+      selectValue3
+    );
+    setInputValue(result[selectValue]);
+    setInputValue3(result[selectValue3]);
+  };
+
+  const handleSumbmit3 = (e) => {
+    e.preventDefault();
+
+    setInputValue("");
+    setInputValue2("");
+    const result = coinConverter(
+      inputValue3,
+      selectValue3,
+      selectValue,
+      selectValue2
+    );
+    setInputValue(result[selectValue]);
+    setInputValue2(result[selectValue2]);
   };
 
   const coinConverter = (amount, basecoin, coin2, coin3) => {
@@ -88,7 +120,6 @@ function SectionConvert() {
                     <CardConvert
                       abbr="EUR"
                       style={{ backgroundColor: "#d8f8e1" }}
-                      readOnly={false}
                       inputValue={inputValue}
                       setInputValue={setInputValue}
                       selectValue={selectValue}
@@ -97,29 +128,31 @@ function SectionConvert() {
                   </form>
                 </div>
                 <div className="col-md-4">
-                  <CardConvert
-                    abbr="BTC"
-                    style={{ backgroundColor: "#d8f8e1" }}
-                    readOnly={true}
-                    inputValue={inputValue2}
-                    setInputValue={setInputValue2}
-                    selectValue={selectValue2}
-                    setSelectValue={setSelectValue2}
-                  />
+                  <form onSubmit={handleSumbmit2}>
+                    <CardConvert
+                      abbr="BTC"
+                      style={{ backgroundColor: "#d8f8e1" }}
+                      inputValue={inputValue2}
+                      setInputValue={setInputValue2}
+                      selectValue={selectValue2}
+                      setSelectValue={setSelectValue2}
+                    />
+                  </form>
                 </div>
               </div>
 
               <div className="row g-5 g-xl-10 justify-content-center mt-2">
                 <div className="col-md-4">
-                  <CardConvert
-                    abbr="USD"
-                    style={{ backgroundColor: "#d8f8e1" }}
-                    readOnly={true}
-                    inputValue={inputValue3}
-                    setInputValue={setInputValue3}
-                    selectValue={selectValue3}
-                    setSelectValue={setSelectValue3}
-                  />
+                  <form onSubmit={handleSumbmit3}>
+                    <CardConvert
+                      abbr="USD"
+                      style={{ backgroundColor: "#d8f8e1" }}
+                      inputValue={inputValue3}
+                      setInputValue={setInputValue3}
+                      selectValue={selectValue3}
+                      setSelectValue={setSelectValue3}
+                    />
+                  </form>
                 </div>
               </div>
             </div>
