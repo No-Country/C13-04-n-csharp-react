@@ -1,13 +1,14 @@
 import "../Heading3/heading3.css";
+import binance from "../Heading3/binance.png"
 
 function Heading3() {
   return (
     <>
-      <div className="container mt-5" id="heading3">
+      <div className="container mt-5 bg-light bg-gradient" id="heading3">
         <h2 className="mt-5 text-center">Heading</h2>
         <div className="row mt-5">
           <div
-            className="col-12 col-md-6 d-flex d-flex flex-column mt-5"
+            className="col-12 col-md-6 d-flex d-flex flex-column mt-5 bg-light bg-gradient"
             id="side-left"
           >
             <div
@@ -20,7 +21,7 @@ function Heading3() {
             <div className="row d-flex justify-content-beetwen">
               <div className="d-flex justify-content-center">
                 <div className="col-md-6 ms-5 p-5" id="wallet-left">
-                  <a href="https://accounts.binance.com/en/login?return_to=aHR0cHM6Ly93d3cuYmluYW5jZS5jb20vZXMvc2VuZC1jYXNo">
+                  <a href="https://accounts.binance.com/en/login?return_to=aHR0cHM6Ly93d3cuYmluYW5jZS5jb20vZXMvc2VuZC1jYXNo" target="_blank">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Binance-coin-bnb-logo.png"
                       id="wallets"
@@ -30,12 +31,14 @@ function Heading3() {
                   </a>
                 </div>
                 <div className="col-md-6 ms-5 p-5">
+                  <a href="https://www.exodus.com/" target="_blank">
                   <img
                     src="https://www.exodus.com/brand/img/logo.svg"
                     id="wallets"
                     className="rounded-circle"
                     alt="..."
                   />
+                  </a>
                 </div>
               </div>
             </div>
@@ -43,20 +46,24 @@ function Heading3() {
             <div className="row d-flex justify-content-beetwen">
               <div className="d-flex justify-content-center">
                 <div className="col-md-6 mt-5 ms-5 p-5">
+                  <a href="https://www.coinbase.com/" target="_blank">
                   <img
                     src="https://altcoinsbox.com/wp-content/uploads/2022/12/coinbase-logo.webp"
                     id="wallets"
                     className="rounded-circle"
                     alt="..."
                   />
+                  </a>
                 </div>
                 <div className="col-md-6 mt-5 ms-5 p-5">
+                  <a href="https://crypto.com/" target="_blank">
                   <img
                     src="https://altcoinsbox.com/wp-content/uploads/2023/01/crypto.com-logo.png"
                     id="wallets"
                     className="rounded-circle"
                     alt="..."
                   />
+                  </a>
                 </div>
               </div>
             </div>
@@ -64,20 +71,24 @@ function Heading3() {
             <div className="row d-flex justify-content-beetwen">
               <div className="d-flex justify-content-center">
                 <div className="col-md-6 mt-5 ms-5 mb-2 p-5">
+                  <a href="https://www.bitfinex.com/" target="_blank">
                   <img
                     src="https://altcoinsbox.com/wp-content/uploads/2023/01/bitfinex-logo.webp"
                     id="wallets"
                     className="rounded-circle"
                     alt="..."
                   />
+                  </a>
                 </div>
                 <div className="col-md-6 mt-5 ms-5 mb-2 p-5">
+                  <a href="https://metamask.io/" target="_blank">
                   <img
-                    src="https://logolook.net/wp-content/uploads/2022/05/Metamask-Logo.png"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Rl_x8HPYQ-kJILOBxV7iNcZiALYDk4KoR85EYl7oVFmhCB6FF3p5wBZi4wdN9BPMmxE&usqp=CAU"
                     id="wallets"
                     className="rounded-circle"
                     alt="..."
                   />
+                  </a>
                 </div>
               </div>
             </div>

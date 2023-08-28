@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import CardConvert from "../cards/CardConvert";
-import CardConvertTraditional from "../cards/CardConvertTraditional";
+import CardConvert from "../Cards/CardConvert";
+import CardConvertTraditional from "../Cards/CardConvertTraditional";
 
 function SectionConvert() {
   const [inputValue, setInputValue] = useState("");

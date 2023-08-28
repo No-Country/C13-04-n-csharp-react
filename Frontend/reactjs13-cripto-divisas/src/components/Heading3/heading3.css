@@ -1,22 +1,24 @@
 #side-left{
-    background-color: whitesmoke
+    background-color: #ffffff
 }
 
 #alert{
         width: 180px; /* Ajusta el ancho según sea necesario */
         height: 130px; /* Ajusta la altura según sea necesario */
-        background-color: orangered; /* Color de fondo de la alerta */
+        background-color: #FF7C03; /* Color de fondo de la alerta */
         color: black; /* Color del texto */
         border-radius: 50%; /* Convierte en una forma circular */
         text-align: center; /* Centra el texto verticalmente */
         line-height: 110px; /* Ajusta el espacio para centrar el texto horizontalmente */
         font-size: 20px;
-        box-shadow: 0 0 0 3px black;
+        box-shadow: 0 0 0 3px #524F4F;
         font-weight: bolder;
         cursor: pointer;
         position: relative;
         animation: bounce 1s infinite alternate, glow 2s infinite;
         transition: transform 0.2s ease-in-out;
+        overflow: hidden; /* Ocultar el contenido que se desborda */
+        white-space: nowrap; /* Evitar que el texto haga saltos de línea */
 }
 
 @keyframes bounce {
@@ -40,15 +42,16 @@
 #wallets{
     height: 20vh;
     width: 25vh;
-    box-shadow: 0 0 0 3px orangered;
+    box-shadow: #524F4F;
     border-width: 10px;
     background-color: white;
-    transition: opacity 0.3s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease
 }
 
-.opacable:hover {
-    opacity: 0.7; /* Cambia este valor para ajustar la opacidad al pasar el cursor */
-  }
+#wallets:hover {
+  transform: translateX(20px) translateY(20px); /* Mueve la imagen 20px hacia la derecha y abajo al pasar el cursor sobre ella */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3)
+}
 
 #gif{
     height: 132vh;
