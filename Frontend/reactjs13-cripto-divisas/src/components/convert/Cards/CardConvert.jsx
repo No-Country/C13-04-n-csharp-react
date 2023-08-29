@@ -1,6 +1,14 @@
 import { useEffect } from "react";
 
 function CardConvert(props) {
+  const abbrs = ["USD", "EUR", "PEN", "BTC", "COP", "ARS"].filter((coin) => {
+    return props.abbr !== coin;
+  });
+
+  const selectItems = abbrs.map((abbr, index) => (
+    <option key={index} value={abbr}>{abbr}</option>
+  ));
+
   const handleInputChange = (event) => {
     props.setInputValue(event.target.value);
   };
@@ -33,9 +41,7 @@ function CardConvert(props) {
             onChange={handleSelectChange}
           >
             <option value={props.selectValue}>{props.selectValue}</option>
-            <option value="ARS">ARS</option>
-            <option value="PEN">PEN</option>
-            <option value="COP">COP</option>
+            {selectItems}
           </select>
         </div>
       </div>
