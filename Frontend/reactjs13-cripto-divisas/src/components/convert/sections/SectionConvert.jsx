@@ -3,71 +3,78 @@ import { useState } from "react";
 import CardConvert from "../cards/CardConvert";
 import CardConvertTraditional from "../cards/CardConvertTraditional";
 
+const convertCurrency = (value, from, to1, to2) => {
+  const rates = {
+    USD: 1,
+    ARS: 100,
+    COP: 4000,
+    PEN: 4,
+    EUR: 0.85,
+    BTC: 0.00002,
+  };
+  const baseValue = value / rates[from];
+  return { [to1]: baseValue * rates[to1], [to2]: baseValue * rates[to2] };
+};
+
 function SectionConvert() {
-  const [inputValue, setInputValue] = useState("");
-  const [inputValue2, setInputValue2] = useState("");
-  const [inputValue3, setInputValue3] = useState("");
-  const [selectValue, setSelectValue] = useState("");
-  const [selectValue2, setSelectValue2] = useState("");
-  const [selectValue3, setSelectValue3] = useState("");
+  const [state, setState] = useState({
+    value1: "",
+    value2: "",
+    value3: "",
+    selectedCurrency1: "EUR",
+    selectedCurrency2: "BTC",
+    selectedCurrency3: "USD",
+  });
+  
+  const handleSubmit = (event, idCase) => {
+    event.preventDefault();
+    let result;
+    switch (idCase) {
+      case 1:
+        result = convertCurrency(
+          state.value1,
+          state.selectedCurrency1,
+          state.selectedCurrency2,
+          state.selectedCurrency3
+        );
+        setState({
+          ...state,
+          value2: result[state.selectedCurrency2],
+          value3: result[state.selectedCurrency3],
+        });
+        break;
 
-  const handleSumbmit = (e) => {
-    e.preventDefault();
+      case 2:
+        result = convertCurrency(
+          state.value2,
+          state.selectedCurrency2,
+          state.selectedCurrency1,
+          state.selectedCurrency3
+        );
+        setState({
+          ...state,
+          value1: result[state.selectedCurrency1],
+          value3: result[state.selectedCurrency3],
+        });
+        break;
 
-    setInputValue2("");
-    setInputValue3("");
-    const result = coinConverter(
-      inputValue,
-      selectValue,
-      selectValue2,
-      selectValue3
-    );
-    setInputValue2(result[selectValue2]);
-    setInputValue3(result[selectValue3]);
-  };
+      case 3:
+        result = convertCurrency(
+          state.value3,
+          state.selectedCurrency3,
+          state.selectedCurrency1,
+          state.selectedCurrency2
+        );
+        setState({
+          ...state,
+          value1: result[state.selectedCurrency1],
+          value2: result[state.selectedCurrency2],
+        });
+        break;
 
-  const handleSumbmit2 = (e) => {
-    e.preventDefault();
-    setInputValue("");
-    setInputValue3("");
-    const result = coinConverter(
-      inputValue2,
-      selectValue2,
-      selectValue,
-      selectValue3
-    );
-    setInputValue(result[selectValue]);
-    setInputValue3(result[selectValue3]);
-  };
-
-  const handleSumbmit3 = (e) => {
-    e.preventDefault();
-
-    setInputValue("");
-    setInputValue2("");
-    const result = coinConverter(
-      inputValue3,
-      selectValue3,
-      selectValue,
-      selectValue2
-    );
-    setInputValue(result[selectValue]);
-    setInputValue2(result[selectValue2]);
-  };
-
-  const coinConverter = (amount, basecoin, coin2, coin3) => {
-    const rates = {
-      USD: 1,
-      ARS: 100,
-      COP: 4000,
-      PEN: 4,
-      EUR: 0.85,
-      BTC: 0.00002,
-    };
-    const usdAmount = amount / rates[basecoin];
-    const coin2Amount = usdAmount * rates[coin2];
-    const coin3Amount = usdAmount * rates[coin3];
-    return { [coin2]: coin2Amount, [coin3]: coin3Amount };
+      default:
+        break;
+    }
   };
 
   return (
@@ -116,26 +123,40 @@ function SectionConvert() {
             >
               <div className="row g-5 g-xl-10 justify-content-evenly">
                 <div className="col-md-4">
-                  <form onSubmit={handleSumbmit}>
+                  <form onSubmit={(event) => handleSubmit(event, 1)}>
                     <CardConvert
-                      abbr="EUR"
-                      style={{ backgroundColor: "#d8f8e1" }}
-                      inputValue={inputValue}
-                      setInputValue={setInputValue}
-                      selectValue={selectValue}
-                      setSelectValue={setSelectValue}
+                      inputValue={{
+                        value: state.value1,
+                        onChange: (event) =>
+                          setState({ ...state, value1: event.target.value }),
+                      }}
+                      selectValue={{
+                        value: state.selectedCurrency1,
+                        onChange: (event) =>
+                          setState({
+                            ...state,
+                            selectedCurrency1: event.target.value,
+                          }),
+                      }}
                     />
                   </form>
                 </div>
                 <div className="col-md-4">
-                  <form onSubmit={handleSumbmit2}>
+                  <form onSubmit={(event) => handleSubmit(event, 2)}>
                     <CardConvert
-                      abbr="BTC"
-                      style={{ backgroundColor: "#d8f8e1" }}
-                      inputValue={inputValue2}
-                      setInputValue={setInputValue2}
-                      selectValue={selectValue2}
-                      setSelectValue={setSelectValue2}
+                      inputValue={{
+                        value: state.value2,
+                        onChange: (event) =>
+                          setState({ ...state, value2: event.target.value }),
+                      }}
+                      selectValue={{
+                        value: state.selectedCurrency2,
+                        onChange: (event) =>
+                          setState({
+                            ...state,
+                            selectedCurrency2: event.target.value,
+                          }),
+                      }}
                     />
                   </form>
                 </div>
@@ -143,14 +164,21 @@ function SectionConvert() {
 
               <div className="row g-5 g-xl-10 justify-content-center mt-2">
                 <div className="col-md-4">
-                  <form onSubmit={handleSumbmit3}>
+                  <form onSubmit={(event) => handleSubmit(event, 3)}>
                     <CardConvert
-                      abbr="USD"
-                      style={{ backgroundColor: "#d8f8e1" }}
-                      inputValue={inputValue3}
-                      setInputValue={setInputValue3}
-                      selectValue={selectValue3}
-                      setSelectValue={setSelectValue3}
+                      inputValue={{
+                        value: state.value3,
+                        onChange: (event) =>
+                          setState({ ...state, value3: event.target.value }),
+                      }}
+                      selectValue={{
+                        value: state.selectedCurrency3,
+                        onChange: (event) =>
+                          setState({
+                            ...state,
+                            selectedCurrency3: event.target.value,
+                          }),
+                      }}
                     />
                   </form>
                 </div>
