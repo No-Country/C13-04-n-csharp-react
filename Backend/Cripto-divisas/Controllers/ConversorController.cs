@@ -82,7 +82,7 @@ namespace Cripto_divisas.Controllers
             return Ok(bases);
         }
         [HttpGet("ConversorDesdeMoneda")]
-        public async Task<IActionResult> ConversorDesdeMonedaAsync([FromQuery] string Moneda, [FromQuery] double Monto, [FromQuery] string Coin, [FromQuery] string MonedaPais)
+        public async Task<IActionResult> ConversorDesdeMonedaAsync(string Moneda, double Monto, string Coin, string MonedaPais)
         {
 
             //responses.totalAsk);
@@ -182,7 +182,7 @@ namespace Cripto_divisas.Controllers
         }
 
             [HttpGet("ConversorDesdeCripto")]
-            public async Task<IActionResult> ConversorDesdeCriptoAsync([FromQuery] string Moneda, [FromQuery] double Monto, [FromQuery] string Coin, [FromQuery] string MonedaPais)
+            public async Task<IActionResult> ConversorDesdeCriptoAsync( string Coin, double Monto, string Moneda, string MonedaPais)
             {
                 var httpRequestMessage = new HttpRequestMessage(
                HttpMethod.Get,
