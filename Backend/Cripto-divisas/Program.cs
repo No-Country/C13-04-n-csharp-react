@@ -29,7 +29,8 @@ using (var scope = app.Services.CreateScope()){ var context = scope.ServiceProvi
         app.UseSwaggerUI();
     }
 app.UseCors(builder => builder
-.WithOrigins("https://reactjs13-cripto-divisas-jaardila-3.vercel.app/") // Agrega la URL de tu aplicación de React
+.WithOrigins("https://reactjs13-cripto-divisas-jaardila-3.vercel.app/")
+.WithOrigins("https://localhost/") 
 .AllowAnyHeader()
 .AllowAnyMethod()
 );

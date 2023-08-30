@@ -2,6 +2,7 @@
 using Azure;
 using Cripto_divisas.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Globalization;
 using System.Text.Json;
 using System.Threading;
@@ -201,8 +202,69 @@ namespace Cripto_divisas.Controllers
                         PropertyNameCaseInsensitive = true
 
                     };
+                if (content == "Invalid pair") {
+                    var httpRequeste= new HttpRequestMessage(
 
-                    var responses = JsonSerializer.Deserialize<CriptoyaResponce>(content, options);
+                        HttpMethod.Get,
+                         
+                    "https://api.coinconvert.net/convert/" + Coin + "/" + Moneda + "?amount=" + Monto);
+                         var http = httpClientFactory.CreateClient();
+                         var resp = await http.SendAsync(httpRequeste); // Cambia la URL a la API externa real
+                    if (resp.IsSuccessStatusCode)
+                    {
+                        var res = await resp.Content.ReadAsStringAsync();
+                        var jsonObject = JsonSerializer.Deserialize<Dictionary<string, object>>(res, options);
+
+                        if (jsonObject.TryGetValue(Moneda, out var value) && value is var numericValuee)
+
+                        {
+                            string valorCadena = numericValuee.ToString(); // Convertir el objeto a una cadena
+                            CultureInfo cultura = new CultureInfo("es-ES");
+                            string parteEntera = valorCadena.Split('.')[0];
+                            if (  double.TryParse(valorCadena, NumberStyles.Any, cultura, out double valorNumerico)){  // Obtener la parte después de ':' y eliminar espacios
+                                double valorNumerico1 = double.Parse(parteEntera);
+
+                                valorNumerico = valorNumerico1;
+                            }
+                            
+                            var httpRequestMessage0 = new HttpRequestMessage(
+                                HttpMethod.Get,
+                            "https://v6.exchangerate-api.com/v6/2a9ddc806d84b84c56007f37/pair/" + Moneda + "/" + MonedaPais + "/" + valorNumerico);
+                            var response0 = await httpClient.SendAsync(httpRequestMessage0); // Cambia la URL a la API externa real
+
+                            if (response0.IsSuccessStatusCode)
+                            {
+                                var contenido = await response0.Content.ReadAsStringAsync();
+
+
+                                var responses0 = JsonSerializer.Deserialize<ExchangeAPIResponce>(contenido, options);
+                                var resultadoFinal = new Dictionary<string, double>
+                            {
+                        { Moneda, valorNumerico  },
+                        { MonedaPais,responses0.conversion_result}
+                            };
+                                return Ok(resultadoFinal);
+                            }
+                        else
+                        {
+                                return BadRequest();
+                            }
+                        
+                        }
+                        else
+                        {
+                            // Manejo de errores en caso de que la solicitud no sea exitosa
+                            return BadRequest();
+                        }
+                    }
+                    else
+                    {
+                        // Manejo de errores en caso de que la solicitud no sea exitosa
+                        return BadRequest();
+                    }
+                }
+                
+                var responses = JsonSerializer.Deserialize<CriptoyaResponce>(content, options);
 
                     //responses.totalAsk);
                     var totalAskFormatted = responses.totalAsk.ToString("0.####", CultureInfo.InvariantCulture);
