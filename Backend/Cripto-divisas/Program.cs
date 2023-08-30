@@ -23,11 +23,11 @@ using (var scope = app.Services.CreateScope()){ var context = scope.ServiceProvi
     context.Database.Migrate();
 }
     // Configure the HTTP request pipeline.
-    // if (app.Environment.IsDevelopment())
-    // {
+    if (app.Environment.IsDevelopment())
+    {
         app.UseSwagger();
         app.UseSwaggerUI();
-    // }
+    }
 app.UseCors(builder => builder
 .WithOrigins("https://reactjs13-cripto-divisas-jaardila-3.vercel.app/")
 .WithOrigins("https://localhost/") 
