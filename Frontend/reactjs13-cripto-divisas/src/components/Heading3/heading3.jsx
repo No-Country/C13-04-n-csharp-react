@@ -1,5 +1,6 @@
 import "../Heading3/heading3.css";
 import binance from "../Heading3/binance.png"
+import ChartComponent from "./graphic";
 
 function Heading3() {
   return (
@@ -101,6 +102,7 @@ function Heading3() {
               alt="..."
             />
           </div>
+          <ChartComponent/>
         </div>
       </div>
     </>
