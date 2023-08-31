@@ -1,20 +1,21 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CardConvert from "../cards/CardConvert";
 import CardConvertTraditional from "../cards/CardConvertTraditional";
+import { getDivisas, getCriptos, getDataDesdeMoneda, getDataDesdeCripto } from "@/utils/fetch";
 
-const convertCurrency = (value, from, to1, to2) => {
-  const rates = {
-    USD: 1,
-    ARS: 100,
-    COP: 4000,
-    PEN: 4,
-    EUR: 0.85,
-    BTC: 0.00002,
-  };
-  const baseValue = value / rates[from];
-  return { [to1]: baseValue * rates[to1], [to2]: baseValue * rates[to2] };
-};
+// const getDataDesdeMoneda = (value, from, to1, to2) => {
+//   const rates = {
+//     USD: 1,
+//     ARS: 100,
+//     COP: 4000,
+//     PEN: 4,
+//     EUR: 0.85,
+//     BTC: 0.00002,
+//   };
+//   const baseValue = value / rates[from];
+//   return { [to1]: baseValue * rates[to1], [to2]: baseValue * rates[to2] };
+// };
 
 function SectionConvert() {
   const [state, setState] = useState({
@@ -25,13 +26,13 @@ function SectionConvert() {
     selectedCurrency2: "BTC",
     selectedCurrency3: "USD",
   });
-  
-  const handleSubmit = (event, idCase) => {
+
+  const handleSubmit = async (event, idCase) => {
     event.preventDefault();
     let result;
     switch (idCase) {
       case 1:
-        result = convertCurrency(
+        result = await getDataDesdeMoneda(
           state.value1,
           state.selectedCurrency1,
           state.selectedCurrency2,
@@ -45,7 +46,7 @@ function SectionConvert() {
         break;
 
       case 2:
-        result = convertCurrency(
+        result = await getDataDesdeCripto(
           state.value2,
           state.selectedCurrency2,
           state.selectedCurrency1,
@@ -59,11 +60,11 @@ function SectionConvert() {
         break;
 
       case 3:
-        result = convertCurrency(
+        result = await getDataDesdeMoneda(
           state.value3,
           state.selectedCurrency3,
-          state.selectedCurrency1,
-          state.selectedCurrency2
+          state.selectedCurrency2,
+          state.selectedCurrency1
         );
         setState({
           ...state,
@@ -76,6 +77,23 @@ function SectionConvert() {
         break;
     }
   };
+
+  const [divisas, setDivisas] = useState([]);
+  const [criptos, setCriptos] = useState([]);
+
+  useEffect(() => {
+    getCriptos()
+      .then((criptomonedas) => {
+        setCriptos(criptomonedas);
+      })
+      .catch((err) => console.error(err));
+
+    getDivisas()
+      .then((monedas) => {
+        setDivisas(monedas);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <section className="col-12 col-md-10 offset-md-1">
@@ -138,6 +156,7 @@ function SectionConvert() {
                             selectedCurrency1: event.target.value,
                           }),
                       }}
+                      options={divisas}
                     />
                   </form>
                 </div>
@@ -157,6 +176,7 @@ function SectionConvert() {
                             selectedCurrency2: event.target.value,
                           }),
                       }}
+                      options={criptos}
                     />
                   </form>
                 </div>
@@ -179,6 +199,7 @@ function SectionConvert() {
                             selectedCurrency3: event.target.value,
                           }),
                       }}
+                      options={divisas}
                     />
                   </form>
                 </div>

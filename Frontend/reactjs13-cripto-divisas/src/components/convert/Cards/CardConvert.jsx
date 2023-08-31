@@ -1,10 +1,8 @@
 import SelectCardConvert from "../dropdowns/SelectCardConvert";
 import InputCardConvert from "../inputs/InputCardConvert";
 
-function CardConvert({ inputValue, selectValue }) {
-  const abbrs = ["USD", "EUR", "PEN", "BTC", "COP", "ARS"].filter(
-    (coin) => coin !== selectValue.value
-  );
+function CardConvert({ inputValue, selectValue, options }) {
+  const abbrs = options.filter((coin) => coin !== selectValue.value);
 
   return (
     <div
