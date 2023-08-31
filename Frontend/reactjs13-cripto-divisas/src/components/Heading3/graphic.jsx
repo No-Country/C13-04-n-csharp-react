@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import { Chart } from "chart.js/auto";
 import axios from "axios";
+import "../Heading3/graphic.css"
 
 const ChartComponent = () =>{
     const chartRef = useRef(null);
@@ -31,7 +32,18 @@ const ChartComponent = () =>{
                 },
               ],
             },
+            options: {
+              width: 400, // Establece el ancho de la gráfica en píxeles
+              height: 300, // Establece la altura de la gráfica en píxeles
+              maintainAspectRatio: false, // Asegura que no se mantenga el aspect ratio automáticamente
+              scales: {
+                  y: {
+                      beginAtZero: true
+                  }
+              }
+          }
         })
+        
     } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -42,7 +54,7 @@ const ChartComponent = () =>{
 
     return(
         <div>
-            <canvas ref={chartRef} />
+            <canvas ref={chartRef} id="graphic"/>
         </div>
     )
 };

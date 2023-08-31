@@ -94,15 +94,9 @@ function Heading3() {
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-6 ml-0 mt-5">
-            <img
-              src="https://i0.wp.com/criptotendencia.com/wp-content/uploads/2020/09/Entender-el-cripto-mercado-5.png?resize=660%2C512&ssl=1"
-              id="gif"
-              className="ml-0 w-100 h-100 w-md-75 h-md-75"
-              alt="..."
-            />
+          <div className="col-12 col-md-6 container-fluid">
+            <ChartComponent/>
           </div>
-          <ChartComponent/>
         </div>
       </div>
     </>
