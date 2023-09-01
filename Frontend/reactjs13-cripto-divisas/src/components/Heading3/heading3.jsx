@@ -6,7 +6,6 @@ function Heading3() {
   return (
     <>
       <div className="container mt-5 bg-light bg-gradient" id="heading3">
-        <h2 className="mt-5 text-center">Heading</h2>
         <div className="row mt-5">
           <div
             className="col-12 col-md-6 d-flex d-flex flex-column mt-5 bg-light bg-gradient"

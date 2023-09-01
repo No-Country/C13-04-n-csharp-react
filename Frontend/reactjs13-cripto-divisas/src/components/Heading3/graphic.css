@@ -1,5 +1,11 @@
 #graphic{
-    width: 600px;
+    width: 100px;
     height: 900px;
 }
 
+element.style {
+    display: block;
+    box-sizing: border-box;
+    height: 900px;
+    width: 502px;
+}
