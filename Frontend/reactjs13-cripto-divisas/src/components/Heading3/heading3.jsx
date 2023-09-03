@@ -16,7 +16,7 @@ function Heading3() {
               id="alert"
               role="alert"
             >
-              Buy this crypto!
+              Empieza comprando tus primeras criptos!
             </div>
             <div className="row d-flex justify-content-beetwen">
               <div className="d-flex justify-content-center">
