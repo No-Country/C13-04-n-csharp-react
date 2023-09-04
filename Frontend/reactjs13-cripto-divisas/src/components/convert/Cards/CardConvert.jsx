@@ -1,7 +1,7 @@
 import SelectCardConvert from "../dropdowns/SelectCardConvert";
 import InputCardConvert from "../inputs/InputCardConvert";
 
-function CardConvert({ inputValue, selectValue, options }) {
+function CardConvert({ inputValue, selectValue, options, label }) {
   const abbrs = options.filter((coin) => coin !== selectValue.value);
 
   return (
@@ -17,7 +17,7 @@ function CardConvert({ inputValue, selectValue, options }) {
         {/*<!--begin::Title-->*/}
         <div className="d-flex align-items-center fw-bold">
           {/* <!--begin::Label--> */}
-          <div className="text-gray-400 fs-7 me-2">Moneda</div>
+          <div className="text-gray-400 fs-7 me-2">{label}</div>
           {/* <!--begin::Select--> */}
           <SelectCardConvert
             value={selectValue.value}

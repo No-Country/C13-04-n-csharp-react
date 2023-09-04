@@ -157,6 +157,7 @@ function SectionConvert() {
                           }),
                       }}
                       options={divisas}
+                      label="Currency"
                     />
                   </form>
                 </div>
@@ -177,6 +178,7 @@ function SectionConvert() {
                           }),
                       }}
                       options={criptos}
+                      label="Crypto"
                     />
                   </form>
                 </div>
@@ -200,6 +202,7 @@ function SectionConvert() {
                           }),
                       }}
                       options={divisas}
+                      label="Currency"
                     />
                   </form>
                 </div>
