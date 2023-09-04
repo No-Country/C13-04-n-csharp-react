@@ -62,7 +62,7 @@ function Navbar() {
             <li className="nav-item dropdown mx-5">
               <Link
                 className="nav-link dropdown-toggle"
-                href="#"
+                href=""
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -74,7 +74,7 @@ function Navbar() {
                 <li>
                   <Link
                     className="dropdown-item"
-                    href="#"
+                    href="/howToUse/cryptoCurrency"
                     style={{ color: "#FF7C03", fontSize: "18px" }}
                   >
                     Criptomonedas
@@ -84,7 +84,7 @@ function Navbar() {
                 <li>
                   <Link
                     className="dropdown-item"
-                    href="#"
+                    href="/howToUse/currency"
                     style={{ color: "#FF7C03", fontSize: "18px" }}
                   >
                     Divisas
@@ -96,7 +96,7 @@ function Navbar() {
                 <li>
                   <Link
                     className="dropdown-item"
-                    href="#"
+                    href="/howToUse/trading"
                     style={{ color: "#FF7C03", fontSize: "18px" }}
                   >
                     Trading
