@@ -4,8 +4,8 @@ const SelectCardConvert = ({ value, onChange, options }) => {
       className="form-select"
       aria-label="Default select example"
       onChange={onChange}
+      value={value}
     >
-      <option value={value}>{value}</option>
       {options.map((option, index) => (
         <option key={index} value={option}>
           {option}

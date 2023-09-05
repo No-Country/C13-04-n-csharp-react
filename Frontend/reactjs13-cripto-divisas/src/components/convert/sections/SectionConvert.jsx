@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import CardConvert from "../cards/CardConvert";
 import CardConvertTraditional from "../cards/CardConvertTraditional";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 import {
   getDivisas,
   getCriptos,
@@ -19,17 +21,50 @@ function SectionConvert() {
     selectedCurrency3: "USD",
   });
 
+  const toasterGetData = () =>
+    toast.error(
+      "Esta opción para convertir no esta implementada, por favor intenta de otra forma!",
+      {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      }
+    );
+
+  const toasterCurrency = () => {
+    toast.error("Hubo un error, pero ya lo estamos corrigiendo!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+    location.reload();
+  };
+
   const handleSubmit = async (event, idCase) => {
     event.preventDefault();
     let result;
     switch (idCase) {
       case 1:
-        result = await getDataDesdeMoneda(
-          state.value1,
-          state.selectedCurrency1,
-          state.selectedCurrency2,
-          state.selectedCurrency3
-        );
+        try {
+          result = await getDataDesdeMoneda(
+            state.value1,
+            state.selectedCurrency1,
+            state.selectedCurrency2,
+            state.selectedCurrency3
+          );
+        } catch (error) {
+          toasterGetData();
+        }
         setState({
           ...state,
           value2: result[state.selectedCurrency2],
@@ -38,12 +73,16 @@ function SectionConvert() {
         break;
 
       case 2:
-        result = await getDataDesdeCripto(
-          state.value2,
-          state.selectedCurrency2,
-          state.selectedCurrency1,
-          state.selectedCurrency3
-        );
+        try {
+          result = await getDataDesdeCripto(
+            state.value2,
+            state.selectedCurrency2,
+            state.selectedCurrency1,
+            state.selectedCurrency3
+          );
+        } catch (error) {
+          toasterGetData();
+        }
         setState({
           ...state,
           value1: result[state.selectedCurrency1],
@@ -52,12 +91,16 @@ function SectionConvert() {
         break;
 
       case 3:
-        result = await getDataDesdeMoneda(
-          state.value3,
-          state.selectedCurrency3,
-          state.selectedCurrency2,
-          state.selectedCurrency1
-        );
+        try {
+          result = await getDataDesdeMoneda(
+            state.value3,
+            state.selectedCurrency3,
+            state.selectedCurrency2,
+            state.selectedCurrency1
+          );
+        } catch (error) {
+          toasterGetData();
+        }
         setState({
           ...state,
           value1: result[state.selectedCurrency1],
@@ -78,13 +121,13 @@ function SectionConvert() {
       .then((criptomonedas) => {
         setCriptos(criptomonedas);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => toasterCurrency());
 
     getDivisas()
       .then((monedas) => {
         setDivisas(monedas);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => toasterCurrency());
   }, []);
 
   return (
@@ -205,6 +248,8 @@ function SectionConvert() {
           </div>
         </div>
       </div>
+      {/*componente de react-toastify*/}
+      <ToastContainer />
     </section>
   );
 }

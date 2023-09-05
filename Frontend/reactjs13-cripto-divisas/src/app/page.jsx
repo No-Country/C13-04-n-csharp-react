@@ -4,7 +4,7 @@ import SectionConvert from "@/components/convert/sections/SectionConvert";
 
 function ConvertPage() {
   return (
-    <div className="d-flex flex-column flex-root app-root bg-light bg-gradient mt-5">
+    <div className="d-flex flex-column flex-root app-root bg-light bg-gradient">
       <div className="app-page flex-column flex-column-fluid">
         <div className="app-wrapper flex-column flex-row-fluid">
           {/* <!--begin::Main--> */}
@@ -12,7 +12,7 @@ function ConvertPage() {
             {/*<!--begin::Content wrapper-->*/}
             <div className="d-flex flex-column flex-column-fluid">
               <div id="kt_app_content" className="app-content flex-column-fluid" >
-                <div id="kt_app_content_container" className="app-container container-xxl" >
+                <div id="kt_app_content_container" className="app-container container-xxl mt-4" >
                   {/*<!--begin::Row-->*/}
                   <div className="row g-5 g-xl-10">
                     {/* seccion de información en las cards */}

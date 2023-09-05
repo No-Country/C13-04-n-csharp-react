@@ -43,11 +43,7 @@ export const getCriptos = () => {
       return response.json();
     })
     .catch((error) => {
-      console.error(
-        "Hubo un error al hacer la solicitud fetch:",
-        error.message
-      );
-      return ["BTC", "ETH"];
+      throw error;
     });
 };
 
@@ -64,20 +60,14 @@ export const getDivisas = () => {
       return response.json();
     })
     .catch((error) => {
-      console.error(
-        "Hubo un error al hacer la solicitud fetch:",
-        error.message
-      );
-      return ["USD", "COP"];
+      throw error;
     });
 };
 
 export async function getDataDesdeMoneda(monto, moneda, coin, monedaPais) {
   try {
     const url = `https://nocountrycohorte13.somee.com/api/Conversor/ConversorDesdeMoneda?Moneda=${moneda}&Monto=${monto}&Coin=${coin}&MonedaPais=${monedaPais}`;
-    const response = await fetch(url, {
-      method: "GET",
-    });
+    const response = await fetch(url, { cache: "no-store" } );
     if (!response.ok) {
       throw new Error(
         `HTTP error! status: ${response.status} ${response.statusText}`
@@ -86,16 +76,14 @@ export async function getDataDesdeMoneda(monto, moneda, coin, monedaPais) {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Hubo un error al hacer la solicitud fetch:", error.message);
+    throw error;
   }
 }
 
 export async function getDataDesdeCripto(monto, coin, moneda, monedaPais) {
   try {
     const url = `https://nocountrycohorte13.somee.com/api/Conversor/ConversorDesdeCripto?Coin=${coin}&Monto=${monto}&Moneda=${moneda}&MonedaPais=${monedaPais}`;
-    const response = await fetch(url, {
-      method: "GET",
-    });
+    const response = await fetch(url, { cache: "no-store" });
     if (!response.ok) {
       throw new Error(
         `HTTP error! status: ${response.status} ${response.statusText}`
@@ -104,6 +92,6 @@ export async function getDataDesdeCripto(monto, coin, moneda, monedaPais) {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Hubo un error al hacer la solicitud fetch:", error.message);
+    throw error;
   }
 }

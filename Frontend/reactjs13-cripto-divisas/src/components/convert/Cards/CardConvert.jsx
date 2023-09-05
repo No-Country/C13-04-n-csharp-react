@@ -2,7 +2,6 @@ import SelectCardConvert from "../dropdowns/SelectCardConvert";
 import InputCardConvert from "../inputs/InputCardConvert";
 
 function CardConvert({ inputValue, selectValue, options, label }) {
-  const abbrs = options.filter((coin) => coin !== selectValue.value);
 
   return (
     <div
@@ -22,12 +21,12 @@ function CardConvert({ inputValue, selectValue, options, label }) {
           <SelectCardConvert
             value={selectValue.value}
             onChange={selectValue.onChange}
-            options={abbrs}
+            options={options}
           />
         </div>
       </div>
       {/*<!--begin::Body-->*/}
-      <div className="card-body text-center p-3">
+      <div className="card-body text-center">
         <InputCardConvert
           value={inputValue.value}
           onChange={inputValue.onChange}

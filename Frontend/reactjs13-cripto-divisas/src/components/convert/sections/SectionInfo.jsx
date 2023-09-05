@@ -22,9 +22,9 @@ function SectionInfo() {
         </div>
         <div className="col-md-3">
           <CardCripto
-            title="Dogecoin"
-            abbr="DOGE"
-            image="/shapes/dogecoin.svg"
+            title="BNB"
+            abbr="BNB"
+            image="/shapes/bnb.svg"
             style={{ backgroundColor: "#BFDDE3" }}
           />
         </div>

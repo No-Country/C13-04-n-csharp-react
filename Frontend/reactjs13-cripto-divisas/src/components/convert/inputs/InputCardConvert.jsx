@@ -4,7 +4,7 @@ const InputCardConvert = ({ value, onChange }) => {
       step={"any"}
       value={value}
       type="number"
-      className="form-control rounded-pill w-75 d-inline-block p-3"
+      className="form-control rounded-pill w-75 d-inline-block mt-3 p-2"
       onChange={onChange}
     />
   );
