@@ -5,11 +5,7 @@ import { FaUser, FaSearch } from "react-icons/fa";
 
 function Navbar() {
   useEffect(() => {
-    // const script = document.createElement("script");
-    // script.src = "globals.js";
-    // script.async = true;
-    // document.body.appendChild(script);
-    import("public/globals");
+    import("bootstrap/dist/js/bootstrap.min");
   }, []);
 
   return (

@@ -1,6 +1,4 @@
-import React from "react";
 import Trading from "./trading";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Page() {
     return (
@@ -9,7 +7,7 @@ function Page() {
             backgroundSize: 'cover',
         }}>
             <div className="container">
-                <h1 class="text-center m-3 fw-bold text-xl">TRADING</h1>
+                <h1 className="text-center m-3 fw-bold text-xl">TRADING</h1>
             </div>
 
             <section className="mx-2">

@@ -2,20 +2,12 @@
 import { useEffect, useState } from "react";
 import CardConvert from "../cards/CardConvert";
 import CardConvertTraditional from "../cards/CardConvertTraditional";
-import { getDivisas, getCriptos, getDataDesdeMoneda, getDataDesdeCripto } from "@/utils/fetch";
-
-// const getDataDesdeMoneda = (value, from, to1, to2) => {
-//   const rates = {
-//     USD: 1,
-//     ARS: 100,
-//     COP: 4000,
-//     PEN: 4,
-//     EUR: 0.85,
-//     BTC: 0.00002,
-//   };
-//   const baseValue = value / rates[from];
-//   return { [to1]: baseValue * rates[to1], [to2]: baseValue * rates[to2] };
-// };
+import {
+  getDivisas,
+  getCriptos,
+  getDataDesdeMoneda,
+  getDataDesdeCripto,
+} from "@/utils/fetch";
 
 function SectionConvert() {
   const [state, setState] = useState({

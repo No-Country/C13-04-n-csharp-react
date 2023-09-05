@@ -1,10 +1,7 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 function NewsCard({ title, content, imageUrl, date }) {
     return (
         <div className="news-card m-5">
-            <p class="p-3 mb-2 rounded-4"
+            <p className="p-3 mb-2 rounded-4"
                 style={{ backgroundColor: '#C6C6C6' }}>
                 <div className="row">
                     <div className="col-md-4">
