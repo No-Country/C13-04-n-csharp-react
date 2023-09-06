@@ -1,6 +1,7 @@
 ﻿
-using Azure;
+
 using Cripto_divisas.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Globalization;
@@ -20,7 +21,124 @@ namespace Cripto_divisas.Controllers
         {
             httpClientFactory = _httpClientFactory;
         }
+
+        [HttpGet("Noticias")]
+        public async Task<ActionResult> GetNoticias()
+        {
+
+            var httpRequestMessage = new HttpRequestMessage(
+          HttpMethod.Get,
+       "https://newsdata.io/api/1/news?apikey=pub_28912f77676f83d37db72bd7525ebe81c45b4&image=1&q=bitcoin&language=es,en");
+
+
+            var httpClient = httpClientFactory.CreateClient();
+
+            var response = await httpClient.SendAsync(httpRequestMessage); // Cambia la URL a la API externa real
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+
+                // Puedes procesar el contenido JSON recibido y devolverlo como respuesta en tu API
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+
+                var responses = JsonSerializer.Deserialize<CriptoNoticias>(content, options);
+
+
+
+
+                return Ok(responses.results);
+            }
+            else
+            {
+                // Manejo de errores en caso de que la solicitud no sea exitosa
+                return BadRequest();
+            }
+
+        }
+
+        [HttpGet("MonedasCriptoNombres")]
+        public async Task<IActionResult> GetCriptosNombreAsync()
+        {
+            var httpRequestMessage = new HttpRequestMessage(
+            HttpMethod.Get,
+         "https://api.coingecko.com/api/v3/coins/list");
+
+
+            var httpClient = httpClientFactory.CreateClient();
+
+            var response = await httpClient.SendAsync(httpRequestMessage); // Cambia la URL a la API externa real
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+
+                // Puedes procesar el contenido JSON recibido y devolverlo como respuesta en tu API
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+
+                var responses = JsonSerializer.Deserialize<List<CriptoInfo>>(content, options);
+
+                var coins = new List<CurrencyInfo>();
+
+                foreach (var coinInfo in responses)
+                {
+                    coins.Add(new CurrencyInfo { value = coinInfo.Id, name = coinInfo.Name });
+                }
+                return Ok(coins);
+            }
+            else
+            {
+                // Manejo de errores en caso de que la solicitud no sea exitosa
+                return BadRequest();
+            }
+        }
+        [HttpGet("MonedasPaisesNombres")]
+        public async Task<IActionResult> GetMonedasNombreAsync()
+        {
+            var httpRequestMessage = new HttpRequestMessage(
+            HttpMethod.Get,
+         "https://v6.exchangerate-api.com/v6/2a9ddc806d84b84c56007f37/codes");
+
+
+            var httpClient = httpClientFactory.CreateClient();
+
+            var response = await httpClient.SendAsync(httpRequestMessage); // Cambia la URL a la API externa real
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+
+                // Puedes procesar el contenido JSON recibido y devolverlo como respuesta en tu API
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+
+                var responses = JsonSerializer.Deserialize<ExchangeRateResponse>(content, options);
+
+                var coins = new List<CurrencyInfo>();
+
+                foreach (var coinInfo in responses.supported_codes)
+                {
+                    coins.Add(new CurrencyInfo { value = coinInfo[0], name = coinInfo[1] });
+                }
+                return Ok(coins);
+            }
+            else
+            {
+                // Manejo de errores en caso de que la solicitud no sea exitosa
+                return BadRequest();
+            }
+        }
+
         [HttpGet("Criptos")]
+
         public IActionResult GetCriptos()
         {
             var criptos = new List<string>
@@ -71,16 +189,6 @@ namespace Cripto_divisas.Controllers
             }
         }
 
-        [HttpGet("Bases")]
-        public IActionResult GetBases()
-        {
-            var bases = new List<string>
-            {
-                "ARS", "PEN", "CLP", "COP", "MXN", "BRL", "USD", "VES"
-            };
-
-            return Ok(bases);
-        }
         [HttpGet("ConversorDesdeMoneda")]
         public async Task<IActionResult> ConversorDesdeMonedaAsync(string Moneda, double Monto, string Coin, string MonedaPais)
         {
@@ -181,108 +289,56 @@ namespace Cripto_divisas.Controllers
             }
         }
 
-            [HttpGet("ConversorDesdeCripto")]
-            public async Task<IActionResult> ConversorDesdeCriptoAsync( string Coin, double Monto, string Moneda, string MonedaPais)
+        [HttpGet("ConversorDesdeCripto")]
+        public async Task<IActionResult> ConversorDesdeCriptoAsync(string Coin, double Monto, string Moneda)
+        {
+
+            var httpClient = httpClientFactory.CreateClient();
+
+            // Puedes procesar el contenido JSON recibido y devolverlo como respuesta en tu API
+            var options = new JsonSerializerOptions
             {
-                var httpRequestMessage = new HttpRequestMessage(
-               HttpMethod.Get,
-               "https://criptoya.com/api/binance/" + Coin + "/" + Moneda + "/" + Monto);
+                PropertyNameCaseInsensitive = true
 
+            };
+            if (Moneda == "USD" || Moneda == "usd" || Moneda == "EUR" || Moneda == "eur")
+            {
+                var httpRequeste = new HttpRequestMessage(
 
-                var httpClient = httpClientFactory.CreateClient();
+                    HttpMethod.Get,
 
-                var response = await httpClient.SendAsync(httpRequestMessage); // Cambia la URL a la API externa real
-
-                if (response.IsSuccessStatusCode)
+                "https://api.coinconvert.net/convert/" + Coin + "/" + Moneda + "?amount=" + Monto);
+                var http = httpClientFactory.CreateClient();
+                var resp = await http.SendAsync(httpRequeste); // Cambia la URL a la API externa real
+                if (resp.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
-                    // Puedes procesar el contenido JSON recibido y devolverlo como respuesta en tu API
-                    var options = new JsonSerializerOptions
+                    var res = await resp.Content.ReadAsStringAsync();
+                    var jsonObject = JsonSerializer.Deserialize<Dictionary<string, object>>(res, options);
+
+                    if (jsonObject.TryGetValue(Moneda, out var value) && value is var numericValuee)
+
                     {
-                        PropertyNameCaseInsensitive = true
+                        string valorCadena = numericValuee.ToString(); // Convertir el objeto a una cadena
+                        CultureInfo cultura = new CultureInfo("es-ES");
+                        string parteEntera = valorCadena.Split('.')[0];
+                        if (double.TryParse(valorCadena, NumberStyles.Any, cultura, out double valorNumerico))
+                        {  // Obtener la parte después de ':' y eliminar espacios
+                            double valorNumerico1 = double.Parse(parteEntera);
 
-                    };
-                if (content == "Invalid pair") {
-                    var httpRequeste= new HttpRequestMessage(
-
-                        HttpMethod.Get,
-                         
-                    "https://api.coinconvert.net/convert/" + Coin + "/" + Moneda + "?amount=" + Monto);
-                         var http = httpClientFactory.CreateClient();
-                         var resp = await http.SendAsync(httpRequeste); // Cambia la URL a la API externa real
-                    if (resp.IsSuccessStatusCode)
-                    {
-                        var res = await resp.Content.ReadAsStringAsync();
-                        var jsonObject = JsonSerializer.Deserialize<Dictionary<string, object>>(res, options);
-
-                        if (jsonObject.TryGetValue(Moneda, out var value) && value is var numericValuee)
-
-                        {
-                            string valorCadena = numericValuee.ToString(); // Convertir el objeto a una cadena
-                            CultureInfo cultura = new CultureInfo("es-ES");
-                            string parteEntera = valorCadena.Split('.')[0];
-                            if (  double.TryParse(valorCadena, NumberStyles.Any, cultura, out double valorNumerico)){  // Obtener la parte después de ':' y eliminar espacios
-                                double valorNumerico1 = double.Parse(parteEntera);
-
-                                valorNumerico = valorNumerico1;
-                            }
-                            
-                            var httpRequestMessage0 = new HttpRequestMessage(
-                                HttpMethod.Get,
-                            "https://v6.exchangerate-api.com/v6/2a9ddc806d84b84c56007f37/pair/" + Moneda + "/" + MonedaPais + "/" + valorNumerico);
-                            var response0 = await httpClient.SendAsync(httpRequestMessage0); // Cambia la URL a la API externa real
-
-                            if (response0.IsSuccessStatusCode)
-                            {
-                                var contenido = await response0.Content.ReadAsStringAsync();
-
-
-                                var responses0 = JsonSerializer.Deserialize<ExchangeAPIResponce>(contenido, options);
-                                var resultadoFinal = new Dictionary<string, double>
-                            {
-                        { Moneda, valorNumerico  },
-                        { MonedaPais,responses0.conversion_result}
-                            };
-                                return Ok(resultadoFinal);
-                            }
-                        else
-                        {
-                                return BadRequest();
-                            }
-                        
+                            valorNumerico = valorNumerico1;
                         }
                         else
                         {
                             // Manejo de errores en caso de que la solicitud no sea exitosa
                             return BadRequest();
                         }
-                    }
-                    else
-                    {
-                        // Manejo de errores en caso de que la solicitud no sea exitosa
-                        return BadRequest();
-                    }
-                }
-                
-                var responses = JsonSerializer.Deserialize<CriptoyaResponce>(content, options);
-
-                    //responses.totalAsk);
-                    var totalAskFormatted = responses.totalAsk.ToString("0.####", CultureInfo.InvariantCulture);
-                    var httpRequestMessage1 = new HttpRequestMessage(
-                                 HttpMethod.Get,
-                             "https://v6.exchangerate-api.com/v6/2a9ddc806d84b84c56007f37/pair/" + Moneda + "/" + MonedaPais + "/" + totalAskFormatted);
-                    var response1 = await httpClient.SendAsync(httpRequestMessage1); // Cambia la URL a la API externa real
-
-                    if (response1.IsSuccessStatusCode)
-                    {
-                        var contenido = await response1.Content.ReadAsStringAsync();
 
 
-                        var responses1 = JsonSerializer.Deserialize<ExchangeAPIResponce>(contenido, options);
+
                         var resultadoFinal = new Dictionary<string, double>
                             {
-                        { Coin, responses.totalAsk },
-                        { MonedaPais,responses1.conversion_result}
+                        { Moneda, valorNumerico  }
+
                             };
                         return Ok(resultadoFinal);
                     }
@@ -291,6 +347,78 @@ namespace Cripto_divisas.Controllers
                         // Manejo de errores en caso de que la solicitud no sea exitosa
                         return BadRequest();
                     }
+
+
+                }
+                else
+                {
+                    // Manejo de errores en caso de que la solicitud no sea exitosa
+                    return BadRequest();
+                }
+
+
+            }
+            else
+            {
+                var httpRequeste = new HttpRequestMessage(
+
+                    HttpMethod.Get,
+                "https://api.coinconvert.net/convert/" + Coin + "/" + "USD" + "?amount=" + Monto);
+                var http = httpClientFactory.CreateClient();
+                var resp = await http.SendAsync(httpRequeste); // Cambia la URL a la API externa real
+                if (resp.IsSuccessStatusCode)
+                {
+                    var res = await resp.Content.ReadAsStringAsync();
+                    var jsonObject = JsonSerializer.Deserialize<Dictionary<string, object>>(res, options);
+
+                    if (jsonObject.TryGetValue("USD", out var value) && value is var numericValuee)
+
+                    {
+                        string valorCadena = numericValuee.ToString(); // Convertir el objeto a una cadena
+                        CultureInfo cultura = new CultureInfo("es-ES");
+                        string parteEntera = valorCadena.Split('.')[0];
+                        if (double.TryParse(valorCadena, NumberStyles.Any, cultura, out double valorNumerico))
+                        {  // Obtener la parte después de ':' y eliminar espacios
+                            double valorNumerico1 = double.Parse(parteEntera);
+
+                            valorNumerico = valorNumerico1;
+                        }
+                        else
+                        {
+                            // Manejo de errores en caso de que la solicitud no sea exitosa
+                            return BadRequest();
+                        }
+                        var httpRequestMessage3 = new HttpRequestMessage(
+                                     HttpMethod.Get,
+                                 "https://v6.exchangerate-api.com/v6/2a9ddc806d84b84c56007f37/pair/" + "USD" + "/" + Moneda + "/" + valorNumerico);
+                        var response3 = await httpClient.SendAsync(httpRequestMessage3); // Cambia la URL a la API externa real
+
+                        if (response3.IsSuccessStatusCode)
+                        {
+                            var contenido3 = await response3.Content.ReadAsStringAsync();
+
+
+                            var responses3 = JsonSerializer.Deserialize<ExchangeAPIResponce>(contenido3, options);
+                            var resultadoFinal = new Dictionary<string, double>
+                            {
+                        { Moneda, responses3.conversion_result }
+
+                            };
+                            return Ok(resultadoFinal);
+                        }
+                        else
+                        {
+                            // Manejo de errores en caso de que la solicitud no sea exitosa
+                            return BadRequest();
+                        }
+
+                    }
+                    else
+                    {
+                        // Manejo de errores en caso de que la solicitud no sea exitosa
+                        return BadRequest();
+                    }
+
                 }
                 else
                 {
@@ -298,11 +426,8 @@ namespace Cripto_divisas.Controllers
                     return BadRequest();
                 }
             }
-
-        
+        }
     }
-
-    
 }
 
 
