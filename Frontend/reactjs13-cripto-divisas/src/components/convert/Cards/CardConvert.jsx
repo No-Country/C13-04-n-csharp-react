@@ -5,18 +5,17 @@ function CardConvert({ inputValue, selectValue, options, label }) {
 
   return (
     <div
-      className="card card-flush h-xl-70"
+      className="card card-flush"
       style={{ backgroundColor: "#d8f8e1" }}
     >
       {/*<!--begin::Header-->*/}
       <div
         className="card-header flex-nowrap justify-content-center"
-        style={{ marginBottom: "-20px" }}
       >
         {/*<!--begin::Title-->*/}
         <div className="d-flex align-items-center fw-bold">
           {/* <!--begin::Label--> */}
-          <div className="text-gray-400 fs-7 me-2">{label}</div>
+          <div className="text-gray-400 fs-6 me-2">{label}</div>
           {/* <!--begin::Select--> */}
           <SelectCardConvert
             value={selectValue.value}

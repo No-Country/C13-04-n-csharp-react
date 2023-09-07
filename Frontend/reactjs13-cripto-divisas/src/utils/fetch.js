@@ -32,24 +32,9 @@
 //   }
 // };
 
-export const getCriptos = () => {
-  return fetch("https://nocountrycohorte13.somee.com/api/Conversor/Criptos")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(
-          `HTTP error! status: ${response.status} ${response.statusText}`
-        );
-      }
-      return response.json();
-    })
-    .catch((error) => {
-      throw error;
-    });
-};
-
-export const getDivisas = () => {
+export const getNamesCryptos = () => {
   return fetch(
-    "https://nocountrycohorte13.somee.com/api/Conversor/MonedasPaises"
+    "https://nocountrycohorte13.somee.com/api/Conversor/MonedasCriptoNombres"
   )
     .then((response) => {
       if (!response.ok) {
@@ -64,10 +49,27 @@ export const getDivisas = () => {
     });
 };
 
-export async function getDataDesdeMoneda(monto, moneda, coin, monedaPais) {
+export const getNamesCurrencies = () => {
+  return fetch(
+    "https://nocountrycohorte13.somee.com/api/Conversor/MonedasPaisesNombres"
+  )
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(
+          `HTTP error! status: ${response.status} ${response.statusText}`
+        );
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
+
+export async function getDataFromCurrency(monto, moneda, coin, monedaPais) {
   try {
     const url = `https://nocountrycohorte13.somee.com/api/Conversor/ConversorDesdeMoneda?Moneda=${moneda}&Monto=${monto}&Coin=${coin}&MonedaPais=${monedaPais}`;
-    const response = await fetch(url, { cache: "no-store" } );
+    const response = await fetch(url, { cache: "no-store" });
     if (!response.ok) {
       throw new Error(
         `HTTP error! status: ${response.status} ${response.statusText}`
@@ -80,9 +82,25 @@ export async function getDataDesdeMoneda(monto, moneda, coin, monedaPais) {
   }
 }
 
-export async function getDataDesdeCripto(monto, coin, moneda, monedaPais) {
+export async function getDataFromCrypto(monto, coin, moneda, monedaPais) {
   try {
-    const url = `https://nocountrycohorte13.somee.com/api/Conversor/ConversorDesdeCripto?Coin=${coin}&Monto=${monto}&Moneda=${moneda}&MonedaPais=${monedaPais}`;
+    const url = `https://nocountrycohorte13.somee.com/api/Conversor/ConversorDesdeCripto2?Coin=${coin}&Monto=${monto}&Moneda=${moneda}&MonedaPais=${monedaPais}`;
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(
+        `HTTP error! status: ${response.status} ${response.statusText}`
+      );
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function getDataFromCryptoConvertTraditional(monto, coin, moneda) {
+  try {
+    const url = `https://nocountrycohorte13.somee.com/api/Conversor/ConversorDesdeCripto?Coin=${coin}&Monto=${monto}&Moneda=${moneda}`;
     const response = await fetch(url, { cache: "no-store" });
     if (!response.ok) {
       throw new Error(

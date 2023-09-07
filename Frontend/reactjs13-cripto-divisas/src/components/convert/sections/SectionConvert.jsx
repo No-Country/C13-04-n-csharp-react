@@ -5,10 +5,10 @@ import CardConvertTraditional from "../cards/CardConvertTraditional";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import {
-  getDivisas,
-  getCriptos,
-  getDataDesdeMoneda,
-  getDataDesdeCripto,
+  getNamesCurrencies,
+  getNamesCryptos,
+  getDataFromCurrency,
+  getDataFromCrypto,
 } from "@/utils/fetch";
 
 function SectionConvert() {
@@ -37,7 +37,7 @@ function SectionConvert() {
     );
 
   const toasterCurrency = () => {
-    toast.error("Hubo un error, pero ya lo estamos corrigiendo!", {
+    toast.error("Hubo un error, pero ya lo estamos corrigiendo, por favor recargue la página!", {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -47,7 +47,7 @@ function SectionConvert() {
       progress: undefined,
       theme: "colored",
     });
-    location.reload();
+    // location.reload();
   };
 
   const handleSubmit = async (event, idCase) => {
@@ -56,7 +56,7 @@ function SectionConvert() {
     switch (idCase) {
       case 1:
         try {
-          result = await getDataDesdeMoneda(
+          result = await getDataFromCurrency(
             state.value1,
             state.selectedCurrency1,
             state.selectedCurrency2,
@@ -74,7 +74,7 @@ function SectionConvert() {
 
       case 2:
         try {
-          result = await getDataDesdeCripto(
+          result = await getDataFromCrypto(
             state.value2,
             state.selectedCurrency2,
             state.selectedCurrency1,
@@ -92,7 +92,7 @@ function SectionConvert() {
 
       case 3:
         try {
-          result = await getDataDesdeMoneda(
+          result = await getDataFromCurrency(
             state.value3,
             state.selectedCurrency3,
             state.selectedCurrency2,
@@ -113,19 +113,19 @@ function SectionConvert() {
     }
   };
 
-  const [divisas, setDivisas] = useState([]);
-  const [criptos, setCriptos] = useState([]);
+  const [currencies, setCurrencies] = useState([]);
+  const [cryptos, setCryptos] = useState([]);
 
   useEffect(() => {
-    getCriptos()
-      .then((criptomonedas) => {
-        setCriptos(criptomonedas);
+    getNamesCryptos()
+      .then((namesCoins) => {
+        setCryptos(namesCoins);
       })
       .catch((err) => toasterCurrency());
 
-    getDivisas()
-      .then((monedas) => {
-        setDivisas(monedas);
+    getNamesCurrencies()
+      .then((namesCurrencies) => {
+        setCurrencies(namesCurrencies);
       })
       .catch((err) => toasterCurrency());
   }, []);
@@ -191,7 +191,7 @@ function SectionConvert() {
                             selectedCurrency1: event.target.value,
                           }),
                       }}
-                      options={divisas}
+                      options={currencies}
                       label="Currency"
                     />
                   </form>
@@ -212,7 +212,7 @@ function SectionConvert() {
                             selectedCurrency2: event.target.value,
                           }),
                       }}
-                      options={criptos}
+                      options={cryptos}
                       label="Crypto"
                     />
                   </form>
@@ -236,7 +236,7 @@ function SectionConvert() {
                             selectedCurrency3: event.target.value,
                           }),
                       }}
-                      options={divisas}
+                      options={currencies}
                       label="Currency"
                     />
                   </form>

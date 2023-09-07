@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { getDataDesdeCripto } from "@/utils/fetch";
+import { getDataFromCrypto } from "@/utils/fetch";
 
 async function CardCripto({ style, title, abbr, image }) {
   let valueUSD = "";
   try {
     const currency = "USD";
-    const result = await getDataDesdeCripto(1, abbr, currency, "EUR");
+    const result = await getDataFromCrypto(1, abbr, currency, "EUR");
     valueUSD = result[currency];
   } catch (error) {
     alert(`Error: ${error.message}`);
