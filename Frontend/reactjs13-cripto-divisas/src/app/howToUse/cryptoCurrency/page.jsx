@@ -7,7 +7,7 @@ function Page() {
             backgroundSize: 'cover',
         }}>
             <div className="container">
-                <h1 className="text-center m-3 fw-bold text-xl">CRIPTOMONEDAS</h1>
+                <h1 className="text-center mt-3 fw-bold text-xl">CRIPTOMONEDAS</h1>
             </div>
 
             <section className="mx-2">
