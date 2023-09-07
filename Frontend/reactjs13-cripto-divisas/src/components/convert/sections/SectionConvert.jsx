@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import CardConvert from "../cards/CardConvert";
-import CardConvertTraditional from "../cards/CardConvertTraditional";
+import CardConvert from "../Cards/CardConvert";
+import CardConvertTraditional from "../Cards/CardConvertTraditional";
 import {
   getDivisas,
   getCriptos,

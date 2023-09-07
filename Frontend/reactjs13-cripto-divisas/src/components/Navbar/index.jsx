@@ -106,7 +106,7 @@ function Navbar() {
               <Link
                 className="nav-link active"
                 aria-current="page"
-                href="/convert"
+                href="/send"
                 style={{ color: "#FF7C03", fontSize: "18px" }}
               >
                 Enviar
