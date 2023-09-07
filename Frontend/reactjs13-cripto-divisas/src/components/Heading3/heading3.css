@@ -45,6 +45,7 @@
     width: 25vh;
     box-shadow: #524F4F;
     border-width: 10px;
+    max-width: 100%;
     background-color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease
 }

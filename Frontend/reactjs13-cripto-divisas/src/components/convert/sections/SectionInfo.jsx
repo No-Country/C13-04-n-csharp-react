@@ -1,5 +1,4 @@
-import CardCripto from "../cards/CardCripto";
-
+import CardCripto from "../Cards/CardCripto";
 function SectionInfo() {
   return (
     <section id="convertInfo" className="col-xxl-12">
