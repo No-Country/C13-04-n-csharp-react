@@ -1,4 +1,4 @@
-import CardCripto from "../Cards/CardCripto";
+import CardCripto from "../cards/CardCripto";
 function SectionInfo() {
   return (
     <section id="convertInfo" className="col-xxl-12">
@@ -21,7 +21,7 @@ function SectionInfo() {
         </div>
         <div className="col-md-3">
           <CardCripto
-            title="BNB"
+            title="Binance Coin"
             abbr="BNB"
             image="/shapes/bnb.svg"
             style={{ backgroundColor: "#BFDDE3" }}
