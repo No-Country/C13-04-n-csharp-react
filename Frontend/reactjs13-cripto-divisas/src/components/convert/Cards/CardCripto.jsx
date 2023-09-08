@@ -1,14 +1,17 @@
 import Image from "next/image";
 import { getDataFromCrypto } from "@/utils/fetch";
+import { convertCurrency } from "@/utils/dataDemo";
 
 async function CardCripto({ style, title, abbr, image }) {
   let valueUSD = "";
+  const currency = "USD";
   try {
-    const currency = "USD";
     const result = await getDataFromCrypto(1, abbr, currency, "EUR");
     valueUSD = result[currency];
   } catch (error) {
-    alert(`Error: ${error.message}`);
+    console.error(`Error: ${error.message}`);
+    const result = convertCurrency(1, abbr, currency, "EUR");
+    valueUSD = result[currency];
   }
   return (
     <div className="card card-flush h-xl-60" style={style}>
