@@ -6,6 +6,7 @@ import {
   getNamesCryptos,
   getDataFromCryptoConvertTraditional,
 } from "@/utils/fetch";
+import InputCardConvert from "../inputs/InputCardConvert";
 
 function CardConvertTraditional() {
   const [currencies, setCurrencies] = useState([]);
@@ -26,7 +27,7 @@ function CardConvertTraditional() {
         state.selectedCurrency2
       );
     } catch (error) {
-      alert("error: " + error.message);
+      console.error("error: " + error.message);
     }
     setState({
       ...state,
@@ -64,7 +65,7 @@ function CardConvertTraditional() {
               }
               options={cryptos}
             />
-            <label htmlFor="floatingInputValue">Nombre CriptoMoneda</label>
+            <label id="labelCrypto">Nombre CriptoMoneda</label>
           </div>
         </div>
 
@@ -80,7 +81,7 @@ function CardConvertTraditional() {
               }
               options={currencies}
             />
-            <label htmlFor="floatingInputValue">Nombre Moneda</label>
+            <label id="labelCurrency">Nombre Moneda</label>
           </div>
         </div>
       </div>
@@ -91,13 +92,19 @@ function CardConvertTraditional() {
         <div className="col-6">
           {/*<!--begin::Input group-->*/}
           <div className="form-floating">
-            <input
-              type="email"
+            <InputCardConvert
+              type="number"
               className="form-control fw-bold"
-              id="floatingInputValue"
               value={state.value1}
+              onChange={(event) =>
+                setState({
+                  ...state,
+                  value1: event.target.value,
+                })
+              }
+              readOnly={false}
             />
-            <label htmlFor="floatingInputValue">
+            <label id="labelCryptoAmount">
               Precio({state.selectedCurrency1})
             </label>
           </div>
@@ -106,13 +113,19 @@ function CardConvertTraditional() {
         <div className="col-6">
           {/*<!--begin::Input group-->*/}
           <div className="form-floating">
-            <input
-              type="email"
-              className="form-control text-gray-800 fw-bold"
-              id="floatingInputValue2"
+            <InputCardConvert
+              type="number"
+              className="form-control fw-bold"
               value={state.value2}
+              onChange={(event) =>
+                setState({
+                  ...state,
+                  value2: event.target.value,
+                })
+              }
+              readOnly={true}
             />
-            <label htmlFor="floatingInputValue">
+            <label id="labelCurrencyAmount">
               Precio({state.selectedCurrency2})
             </label>
           </div>
@@ -120,7 +133,9 @@ function CardConvertTraditional() {
       </div>
       {/*<!--begin::Action-->*/}
       <div className="d-flex align-items-end">
-        <button className="btn btn-primary fs-3 w-100" onClick={handleOnClick}>Convertir</button>
+        <button className="btn btn-primary fs-3 w-100" onClick={handleOnClick}>
+          Convertir
+        </button>
       </div>
     </div>
   );

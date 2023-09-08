@@ -66,9 +66,12 @@ export const getNamesCurrencies = () => {
     });
 };
 
-export async function getDataFromCurrency(monto, moneda, coin, monedaPais) {
+export async function getDataFromCurrency(amount, baseCurrency, crypto, currency) {
   try {
-    const url = `https://nocountrycohorte13.somee.com/api/Conversor/ConversorDesdeMoneda?Moneda=${moneda}&Monto=${monto}&Coin=${coin}&MonedaPais=${monedaPais}`;
+    if (amount <= 0 || amount === "") {
+      throw new Error("Invalid");
+    }
+    const url = `https://nocountrycohorte13.somee.com/api/Conversor/ConversorDesdeMoneda?Moneda=${baseCurrency}&Monto=${amount}&Coin=${crypto}&MonedaPais=${currency}`;
     const response = await fetch(url, { cache: "no-store" });
     if (!response.ok) {
       throw new Error(
@@ -82,9 +85,12 @@ export async function getDataFromCurrency(monto, moneda, coin, monedaPais) {
   }
 }
 
-export async function getDataFromCrypto(monto, coin, moneda, monedaPais) {
+export async function getDataFromCrypto(amount, crypto, currency1, currency2) {
   try {
-    const url = `https://nocountrycohorte13.somee.com/api/Conversor/ConversorDesdeCripto2?Coin=${coin}&Monto=${monto}&Moneda=${moneda}&MonedaPais=${monedaPais}`;
+    if (amount <= 0 || amount === "") {
+      throw new Error("Invalid");
+    }
+    const url = `https://nocountrycohorte13.somee.com/api/Conversor/ConversorDesdeCripto2?Coin=${crypto}&Monto=${amount}&Moneda=${currency1}&MonedaPais=${currency2}`;
     const response = await fetch(url, { cache: "no-store" });
     if (!response.ok) {
       throw new Error(
@@ -98,9 +104,12 @@ export async function getDataFromCrypto(monto, coin, moneda, monedaPais) {
   }
 }
 
-export async function getDataFromCryptoConvertTraditional(monto, coin, moneda) {
+export async function getDataFromCryptoConvertTraditional(amount, crypto, currency) {
   try {
-    const url = `https://nocountrycohorte13.somee.com/api/Conversor/ConversorDesdeCripto?Coin=${coin}&Monto=${monto}&Moneda=${moneda}`;
+    if (amount <= 0 || amount === "") {
+      throw new Error("Invalid");
+    }
+    const url = `https://nocountrycohorte13.somee.com/api/Conversor/ConversorDesdeCripto?Coin=${crypto}&Monto=${amount}&Moneda=${currency}`;
     const response = await fetch(url, { cache: "no-store" });
     if (!response.ok) {
       throw new Error(

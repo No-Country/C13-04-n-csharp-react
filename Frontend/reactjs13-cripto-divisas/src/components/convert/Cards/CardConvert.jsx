@@ -2,16 +2,10 @@ import SelectCardConvert from "../dropdowns/SelectCardConvert";
 import InputCardConvert from "../inputs/InputCardConvert";
 
 function CardConvert({ inputValue, selectValue, options, label }) {
-
   return (
-    <div
-      className="card card-flush"
-      style={{ backgroundColor: "#d8f8e1" }}
-    >
+    <div className="card card-flush" style={{ backgroundColor: "#d8f8e1" }}>
       {/*<!--begin::Header-->*/}
-      <div
-        className="card-header flex-nowrap justify-content-center"
-      >
+      <div className="card-header flex-nowrap justify-content-center">
         {/*<!--begin::Title-->*/}
         <div className="d-flex align-items-center fw-bold">
           {/* <!--begin::Label--> */}
@@ -29,6 +23,9 @@ function CardConvert({ inputValue, selectValue, options, label }) {
         <InputCardConvert
           value={inputValue.value}
           onChange={inputValue.onChange}
+          className="form-control rounded-pill w-75 d-inline-block mt-3 p-2"
+          type="number"
+          readOnly={false}
         />
       </div>
     </div>

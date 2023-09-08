@@ -1,11 +1,17 @@
-const InputCardConvert = ({ value, onChange }) => {
+const InputCardConvert = ({ value, onChange, className, type, readOnly }) => {
   return (
     <input
       step={"any"}
       value={value}
-      type="number"
-      className="form-control rounded-pill w-75 d-inline-block mt-3 p-2"
+      type={type}
+      className={className}
       onChange={onChange}
+      readOnly={readOnly}
+      onKeyDown={
+        type === "number"
+          ? (evt) => evt.key === "e" && evt.preventDefault()
+          : false
+      }
     />
   );
 };
