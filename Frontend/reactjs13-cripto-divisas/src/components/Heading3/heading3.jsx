@@ -16,7 +16,7 @@ function Heading3() {
               id="alert"
               role="alert"
             >
-              Empieza comprando tus primeras criptos!
+              Puedes conseguir mas informacion sobre crypto en estos exchanges!
             </div>
             <div className="row d-flex justify-content-beetwen">
               <div className="d-flex justify-content-center">

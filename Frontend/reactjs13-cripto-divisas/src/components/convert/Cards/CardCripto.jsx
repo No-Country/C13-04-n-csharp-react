@@ -8,7 +8,7 @@ async function CardCripto({ style, title, abbr, image }) {
     const result = await getDataFromCrypto(1, abbr, currency, "EUR");
     valueUSD = result[currency];
   } catch (error) {
-    alert(`Error: ${error.message}`);
+    // alert(`Error: ${error.message}`);
   }
   return (
     <div className="card card-flush h-xl-60" style={style}>
