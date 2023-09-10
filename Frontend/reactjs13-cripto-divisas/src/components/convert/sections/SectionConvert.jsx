@@ -10,6 +10,11 @@ import {
   getDataFromCurrency,
   getDataFromCrypto,
 } from "@/utils/fetch";
+import {
+  convertCurrency,
+  namesCryptos,
+  namesCurrencies,
+} from "@/utils/dataDemo";
 
 function SectionConvert() {
   const [state, setState] = useState({
@@ -23,7 +28,7 @@ function SectionConvert() {
 
   const toasterGetData = () =>
     toast.error(
-      "Esta opción para convertir no esta implementada, por favor intenta de otra forma!",
+      "- Lo sentimos, parece que ha ocurrido un error. Nuestro equipo ya está trabajando en solucionarlo lo antes posible. Gracias por tu paciencia y comprensión.",
       {
         position: "top-center",
         autoClose: 5000,
@@ -37,17 +42,19 @@ function SectionConvert() {
     );
 
   const toasterCurrency = () => {
-    toast.error("Hubo un error, pero ya lo estamos corrigiendo, por favor recargue la página!", {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
-    // location.reload();
+    toast.error(
+      "2- Lo sentimos, parece que ha ocurrido un error. Nuestro equipo ya está trabajando en solucionarlo lo antes posible. Gracias por tu paciencia y comprensión.",
+      {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      }
+    );
   };
 
   const handleSubmit = async (event, idCase) => {
@@ -64,6 +71,12 @@ function SectionConvert() {
           );
         } catch (error) {
           toasterGetData();
+          result = convertCurrency(
+            state.value1,
+            state.selectedCurrency1,
+            state.selectedCurrency2,
+            state.selectedCurrency3
+          );
         }
         setState({
           ...state,
@@ -82,6 +95,12 @@ function SectionConvert() {
           );
         } catch (error) {
           toasterGetData();
+          result = convertCurrency(
+            state.value2,
+            state.selectedCurrency2,
+            state.selectedCurrency1,
+            state.selectedCurrency3
+          );
         }
         setState({
           ...state,
@@ -100,6 +119,12 @@ function SectionConvert() {
           );
         } catch (error) {
           toasterGetData();
+          result = convertCurrency(
+            state.value3,
+            state.selectedCurrency3,
+            state.selectedCurrency2,
+            state.selectedCurrency1
+          );
         }
         setState({
           ...state,
@@ -121,13 +146,19 @@ function SectionConvert() {
       .then((namesCoins) => {
         setCryptos(namesCoins);
       })
-      .catch((err) => toasterCurrency());
+      .catch((err) => {
+        toasterCurrency();
+        setCryptos(namesCryptos);
+      });
 
     getNamesCurrencies()
-      .then((namesCurrencies) => {
-        setCurrencies(namesCurrencies);
+      .then((namesCurr) => {
+        setCurrencies(namesCurr);
       })
-      .catch((err) => toasterCurrency());
+      .catch((err) => {
+        toasterCurrency();
+        setCurrencies(namesCurrencies);
+      });
   }, []);
 
   return (
