@@ -1,4 +1,4 @@
-import CardCripto from "../Cards/CardCripto";
+import CardCripto from "../cards/CardCripto";
 
 function SectionInfo() {
   return (
