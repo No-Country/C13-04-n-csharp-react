@@ -66,4 +66,26 @@
 
 #wallet-left{
     margin-left: 20vh;
+    position: relative;
+}
+
+
+.alert {
+  position: absolute; /* Cambiamos a posición absoluta */
+  top: 90; /* Ajustamos la posición vertical según tu preferencia */
+  left: 20; /* Ajustamos la posición horizontal según tu preferencia */
+  z-index: 1000; /* Ajustamos la capa z-index para superponer la alerta */
+  /* Agrega otros estilos de diseño para la alerta según tu preferencia */
+}
+
+.alert1{
+  position: absolute; /* Cambiamos a posición absoluta */
+  top: 10; /* Ajustamos la posición vertical según tu preferencia */
+  left: 60; /* Ajustamos la posición horizontal según tu preferencia */
+  z-index: 1000; /* Ajustamos la capa z-index para superponer la alerta */
+  /* Agrega otros estilos de diseño para la alerta según tu preferencia */
+}
+
+#wallet-right{
+  position: relative;
 }

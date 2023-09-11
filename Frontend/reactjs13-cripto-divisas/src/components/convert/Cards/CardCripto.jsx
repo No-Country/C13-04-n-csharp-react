@@ -9,9 +9,7 @@ async function CardCripto({ style, title, abbr, image }) {
     const result = await getDataFromCryptoConvertTraditional(1, abbr, currency);
     valueUSD = result[currency];
   } catch (error) {
-    console.error(`Error: ${error.message}`);
-    const result = convertCurrency(1, abbr, currency, "EUR");
-    valueUSD = result[currency];
+    // alert(`Error: ${error.message}`);
   }
   return (
     <div className="card card-flush h-xl-60" style={style}>

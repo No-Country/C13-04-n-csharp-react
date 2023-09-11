@@ -9,7 +9,8 @@ const ChartComponent = () =>{
     const [bitcoinData, setBitcoinData] = useState([]);
     const [ethereumData, setEthereumData] = useState([]);
     const [dogecoinData, setDogeCoinData] = useState([]);
-
+    const [binancecoinData, setBinancecoinData] = useState([]);
+    
     useEffect(() => {
       const fetchBitcoinData = async () => {
         try {
@@ -43,19 +44,32 @@ const ChartComponent = () =>{
           console.error('Error fetching Dogecoin data:', error);
         }
       };
+
+      const fetchBinancecoinData = async () => {
+        try {
+          const response = await axios.get(
+            'https://api.coingecko.com/api/v3/coins/binancecoin/market_chart?vs_currency=usd&days=7'
+          );
+          setBinancecoinData(response.data.prices);
+        } catch (error) {
+          console.error('Error fetching Dogecoin data:', error);
+        }
+      };
   
       fetchBitcoinData();
       fetchEthereumData();
       fetchDogecoinData();
+      fetchBinancecoinData();
     }, []);
   
     useEffect(() => {
-      if (chartRef.current && bitcoinData.length > 0 && ethereumData.length > 0 && dogecoinData.length > 0) {
+      if (chartRef.current && bitcoinData.length > 0 && ethereumData.length > 0 && dogecoinData.length > 0 && binancecoinData.length > 0) {
         const myChartRef = chartRef.current.getContext('2d');
   
         const bitcoinPrices = bitcoinData.map((item) => item[1]);
         const ethereumPrices = ethereumData.map((item) => item[1]);
         const dogecoinPrices = dogecoinData.map((item) => item[1]);
+        const binancecoinPrices = binancecoinData.map((item) => item[1]);
   
         new Chart(myChartRef, {
           type: 'line', // Cambia el tipo de gráfica aquí (line, bar, pie, etc.)
@@ -80,6 +94,12 @@ const ChartComponent = () =>{
                 borderColor: 'rgba(44, 79, 192, 1)', // Otro color para Ethereum
                 borderWidth: 1,
               },
+              {
+                label: 'Precio de Binancecoin',
+                data: binancecoinPrices,
+                borderColor: 'rgba(116, 40, 192, 1)', // Otro color para Ethereum
+                borderWidth: 1,
+              },
             ],
           },
           options: {
@@ -94,7 +114,7 @@ const ChartComponent = () =>{
         }
         });
       }
-    }, [chartRef.current, bitcoinData, ethereumData, dogecoinData]);
+    }, [chartRef.current, bitcoinData, ethereumData, dogecoinData, binancecoinData]);
 
     return(
         <div>
