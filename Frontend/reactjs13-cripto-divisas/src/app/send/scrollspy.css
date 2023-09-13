@@ -17,3 +17,8 @@
 #navbar-subinput{
     color: black;
 }
+
+#images {
+    max-width: 100%;
+    height: auto;
+  }

@@ -1,4 +1,4 @@
-"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { Chart } from "chart.js/auto";
 import axios from "axios";

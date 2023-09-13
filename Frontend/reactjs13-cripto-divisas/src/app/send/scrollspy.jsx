@@ -1,3 +1,4 @@
+"use client";
 import "../send/scrollspy.css"
 
 function Scrollpy() {
@@ -5,10 +6,10 @@ function Scrollpy() {
     return (
         <>
             <div className="row">
-                <div className="col-4 mt-1">
+                <div className="col-4 mt-1" id="inputs-items">
                     <nav id="navbar-example3" className="h-100 flex-column align-items-stretch pe-4 border-end">
                         <nav className="nav nav-pills flex-column">
-                            <a className="nav-link ms-3" id="navbar-input" href="#item-1">Para que nos pueden servir las criptomonedas?</a>
+                            <a className="nav-link ms-3" id="navbar-input" href="#item-1">¿Para que nos pueden servir las criptomonedas?</a>
                             <nav className="nav nav-pills flex-column">
                                 <a className="nav-link ms-5 my-1" id="navbar-subinput" href="#item-1-1">Que es el trading con criptomonedas?</a>
                                 <a className="nav-link ms-5 my-1" id="navbar-subinput" href="#item-1-2">Se puede enviar remesas con criptomonedas?</a>
@@ -21,7 +22,6 @@ function Scrollpy() {
                             <a className="nav-link ms-3" id="navbar-input" href="#item-3">Tutoriales</a>
                             <nav className="nav nav-pills flex-column">
                                 <a className="nav-link ms-5 my-1" id="navbar-subinput" href="#item-3-1">Item 3-1</a>
-                                <a className="nav-link ms-5 my-1" id="navbar-subinput" href="#item-3-2">Item 3-2</a>
                             </nav>
                         </nav>
                     </nav>
@@ -30,7 +30,11 @@ function Scrollpy() {
                 <div className="col-8 mt-3">
                     <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" className="scrollspy-example-2" tabindex="0">
                         <div id="item-1">
-                            <h2>Para que nos pueden servir las criptomonedas?</h2>
+                            <h2>
+                                <strong>
+                            ¿Para qué nos pueden servir las criptomonedas?
+                                </strong>
+                            </h2>
                             <br />
                             <p>Las criptomonedas han emergido como una tecnología financiera disruptiva con una gama diversa de aplicaciones. En primer lugar, sirven como una forma de inversión, permitiendo a las personas comprar y mantener activos digitales con la esperanza de que su valor aumente con el tiempo. Además, las criptomonedas brindan acceso a servicios financieros globales para personas no bancarizadas, democratizando el acceso a la economía global.
                                 <br />
@@ -43,7 +47,12 @@ function Scrollpy() {
                                 En resumen, las criptomonedas están cambiando la forma en que entendemos y utilizamos el dinero, abriendo un abanico de oportunidades en las finanzas, la tecnología y la economía global</p>
                         </div>
                         <div id="item-1-1">
-                            <h3>Que es el trading con criptomonedas?</h3>
+                            <h3>
+                                <strong>
+                                ¿Qué es el trading con criptomonedas?
+                                </strong>
+                            </h3>
+                            <br/>
                             <p>El trading con criptomonedas es una práctica financiera que implica la compra y venta de activos digitales como Bitcoin, Ethereum y otras monedas digitales en diferentes plataformas de intercambio en línea. Los traders buscan beneficiarse de las fluctuaciones en los precios de las criptomonedas, comprando cuando creen que el precio subirá y vendiendo cuando anticipan una caída.
                                 <br />
                                 <br />
@@ -52,31 +61,46 @@ function Scrollpy() {
                                 <br />
                                 Es importante destacar que el trading de criptomonedas requiere educación y experiencia, ya que puede ser complejo y puede llevar a pérdidas financieras considerables si no se realiza con cuidado. Los traders a menudo emplean estrategias como el day trading (operaciones intradía), el swing trading (operaciones a corto y mediano plazo) y el HODLing (mantener a largo plazo) para gestionar sus inversiones y riesgos. Además, la regulación y la seguridad son aspectos cruciales a considerar al involucrarse en el trading de criptomonedas.
                             </p>
+                            <img src="/images/cryptos1.jpg" alt="123" id="images">
+
+                            </img>
                         </div>
                         <div id="item-1-2">
-                            <h3>Se puede enviar remesas con criptomonedas?</h3>
+                            <br/>
+                            <h3> ¿Se puede enviar remesas con criptomonedas?</h3>
+                            <br/>
                             <p>El envío de remesas a través de criptomonedas es una realidad cada vez más viable debido a varias ventajas significativas que ofrecen estas monedas digitales. Aquí se explican algunas de las razones por las cuales es posible y beneficioso utilizar criptomonedas para el envío de remesas:
-                                <br />
-                                <br />
-                                Velocidad y Eficiencia: Las criptomonedas, como Bitcoin y Ethereum, permiten realizar transferencias internacionales de forma casi instantánea. Esto contrasta con los sistemas de remesas tradicionales, que a menudo pueden llevar días o incluso semanas en completarse. La rapidez de las criptomonedas es especialmente valiosa en situaciones de emergencia o cuando se necesita acceso inmediato a fondos.
-                                <br />
-                                <br />
-                                Costos Reducidos: Las tarifas de transferencia asociadas con las criptomonedas suelen ser considerablemente más bajas en comparación con los intermediarios financieros tradicionales, como los bancos y las casas de cambio de divisas. Esto significa que se pueden enviar cantidades mayores de dinero sin incurrir en altos costos de transacción.
-                                <br />
-                                <br />
-                                Accesibilidad Global: Las criptomonedas no están sujetas a las restricciones geográficas y a menudo no requieren intermediarios locales. Esto facilita el acceso a servicios financieros transfronterizos para personas en regiones donde la infraestructura bancaria es limitada o costosa.
-                                <br />
-                                <br />
-                                Inclusión Financiera: Las criptomonedas brindan una oportunidad para la inclusión financiera de las personas no bancarizadas o subatendidas. Cualquier persona con acceso a Internet y un dispositivo compatible puede crear una billetera de criptomonedas y participar en el envío y recepción de remesas.
-                                <br />
-                                <br />
-                                Seguridad: Las criptomonedas utilizan tecnología blockchain, que es altamente segura y transparente. Las transacciones son inmutables y registradas en un libro mayor público, lo que reduce el riesgo de fraudes y manipulaciones.
-                                <br />
-                                <br />
-                                Diversidad de Opciones: Existen numerosas criptomonedas disponibles, lo que brinda a los remitentes y destinatarios la flexibilidad para elegir la que mejor se adapte a sus necesidades, ya sea en términos de velocidad, costos o características específicas.
-                                <br />
-                                <br />
-                                Menos Dependencia de Intermediarios: Las transferencias de criptomonedas se realizan directamente entre las partes involucradas, lo que elimina la necesidad de intermediarios financieros costosos y lentos. Esto reduce la cantidad de manos por las que pasa el dinero, disminuyendo así las posibilidades de pérdidas o demoras</p>
+                                <ul>
+                                    <br/>
+                                    <li>
+                                    <strong>Velocidad y Eficiencia: </strong> Las criptomonedas, como Bitcoin y Ethereum, permiten realizar transferencias internacionales de forma casi instantánea. Esto contrasta con los sistemas de remesas tradicionales, que a menudo pueden llevar días o incluso semanas en completarse. La rapidez de las criptomonedas es especialmente valiosa en situaciones de emergencia o cuando se necesita acceso inmediato a fondos.
+                                    </li>
+                                    <br/>
+                                    <li>
+                                    <strong>Costos Reducidos: </strong> Las tarifas de transferencia asociadas con las criptomonedas suelen ser considerablemente más bajas en comparación con los intermediarios financieros tradicionales, como los bancos y las casas de cambio de divisas. Esto significa que se pueden enviar cantidades mayores de dinero sin incurrir en altos costos de transacción.
+                                    </li>
+                                    <br/>
+                                    <li>
+                                    <strong>Accesibilidad Global: </strong> Las criptomonedas no están sujetas a las restricciones geográficas y a menudo no requieren intermediarios locales. Esto facilita el acceso a servicios financieros transfronterizos para personas en regiones donde la infraestructura bancaria es limitada o costosa.
+                                    </li>
+                                    <br/>
+                                    <li>
+                                    <strong>Inclusión Financiera: </strong> Las criptomonedas brindan una oportunidad para la inclusión financiera de las personas no bancarizadas o subatendidas. Cualquier persona con acceso a Internet y un dispositivo compatible puede crear una billetera de criptomonedas y participar en el envío y recepción de remesas.
+                                    </li>
+                                    <br/>
+                                    <li>
+                                    <strong>Seguridad: </strong> Las criptomonedas utilizan tecnología blockchain, que es altamente segura y transparente. Las transacciones son inmutables y registradas en un libro mayor público, lo que reduce el riesgo de fraudes y manipulaciones.
+                                    </li>
+                                    <br/>
+                                    <li>
+                                    <strong>Diversidad de Opciones: </strong> Existen numerosas criptomonedas disponibles, lo que brinda a los remitentes y destinatarios la flexibilidad para elegir la que mejor se adapte a sus necesidades, ya sea en términos de velocidad, costos o características específicas.
+                                    </li>
+                                    <br/>
+                                    <li>
+                                    <strong>Menos Dependencia de Intermediarios: </strong> Las transferencias de criptomonedas se realizan directamente entre las partes involucradas, lo que elimina la necesidad de intermediarios financieros costosos y lentos. Esto reduce la cantidad de manos por las que pasa el dinero, disminuyendo así las posibilidades de pérdidas o demoras
+                                    </li>
+                                </ul>
+                            </p>
                         </div>
                         <div id="item-2">
                             <h4>Envio de remesas con criptomonedas</h4>
@@ -163,7 +187,13 @@ La elección final dependerá de tus preferencias personales, las tarifas y la i
                         </div>
                         <div id="item-3-1">
                             <h5>Item 3-1</h5>
-                            <p>...</p>
+                            <p>   Hola 
+                                
+                                <a href='https://youtu.be/tXF8SqUs5MA' target="_blank" rel="noopener noreferrer">
+                                    <h4>Soy un link a youtube</h4>
+    </a>
+    </p>
+
                         </div>
                         <div id="item-3-2">
                             <h5>Item 3-2</h5>
