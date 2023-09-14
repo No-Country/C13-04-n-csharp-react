@@ -91,7 +91,7 @@ function CardConvertTraditional() {
         {/*<!--begin::Col-->*/}
         <div className="col-6">
           {/*<!--begin::Input group-->*/}
-          <div className="form-floating">
+          <div className="form-floating" >
             <InputCardConvert
               type="number"
               className="form-control fw-bold"
@@ -132,8 +132,8 @@ function CardConvertTraditional() {
         </div>
       </div>
       {/*<!--begin::Action-->*/}
-      <div className="d-flex align-items-end">
-        <button className="btn btn-primary fs-3 w-100" onClick={handleOnClick}>
+      <div className="d-flex align-items-end ">
+        <button className="btn btn-primary fs-3 w-100 " onClick={handleOnClick}>
           Convertir
         </button>
       </div>

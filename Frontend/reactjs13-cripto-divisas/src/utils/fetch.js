@@ -122,3 +122,18 @@ export async function getDataFromCryptoConvertTraditional(amount, crypto, curren
     throw error;
   }
 }
+
+export async function getNews() {
+  try {
+    const res = await fetch('https://nocountrycohorte13.somee.com/api/Conversor/Noticias');
+    if (!res.ok) {
+      throw new Error(res.statusText);
+    }
+    const articles = await res.json();
+
+    return articles;
+  } catch (err) {
+    console.error('Error fetching articles:', err);
+    return [];
+  }
+}

@@ -21,6 +21,7 @@ function CardConvert({ inputValue, selectValue, options, label }) {
       {/*<!--begin::Body-->*/}
       <div className="card-body text-center">
         <InputCardConvert
+          
           value={inputValue.value}
           onChange={inputValue.onChange}
           className="form-control rounded-pill w-75 d-inline-block mt-3 p-2"

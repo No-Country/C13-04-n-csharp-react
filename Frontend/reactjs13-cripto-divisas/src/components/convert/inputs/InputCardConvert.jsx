@@ -1,6 +1,7 @@
 const InputCardConvert = ({ value, onChange, className, type, readOnly }) => {
   return (
     <input
+    style={{border: '1px solid', borderColor: '#FF7C03', borderRadius: '1rem'}}
       step={"any"}
       value={value}
       type={type}

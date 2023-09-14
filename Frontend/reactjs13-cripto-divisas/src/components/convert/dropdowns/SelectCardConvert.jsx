@@ -14,6 +14,7 @@ const SelectCardConvert = ({ value, onChange, options }) => {
   });
   return (
     <select
+      style={{ border: '1px solid', borderColor: '#FF7C03', borderRadius: '1rem' }}
       className="form-select"
       aria-label="Default select example"
       onChange={onChange}

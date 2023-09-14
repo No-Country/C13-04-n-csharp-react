@@ -162,7 +162,8 @@ function SectionConvert() {
   }, []);
 
   return (
-    <section className="col-12 col-md-10 offset-md-1">
+    <section className="col-12 col-md-10 offset-md-1 p-2"
+      style={{ backgroundColor: '#c6c6c6c6', borderRadius: '0.5rem' }}>
       <div
         className="card h-xl-60"
         style={{
@@ -171,11 +172,12 @@ function SectionConvert() {
         }}
       >
         {/*<!--begin::Header-->*/}
-        <div className="card-header position-relative min-h-50px p-0 border-bottom-2">
-          <ul className="nav nav-pills nav-pills-custom d-flex position-relative w-100">
+        <div className=" position-relative min-h-50px p-0 border-bottom-2">
+          <ul className="nav nav-pills nav-pills-custom d-flex position-relative w-100 mt-2">
+
             <li className="nav-item mx-0 p-0 w-50">
               <a
-                className="nav-link btn btn-color-muted active border-0 h-100 px-0"
+                className="nav-link btn btn-color-muted border-0 h-100 px-0 custom-nav-link margin "
                 data-bs-toggle="pill"
                 id="kt_forms_widget_1_tab_1"
                 href="#kt_forms_widget_1_tab_content_1"
@@ -185,14 +187,16 @@ function SectionConvert() {
                 </span>
               </a>
             </li>
-            <li className="nav-item mx-0 px-0 w-50">
+
+            <li className="nav-item mx-0 px-0 w-50 ">
               <a
-                className="nav-link btn btn-color-muted border-0 h-100 px-0"
+                className="nav-link btn btn-color-muted border-0 h-100 px-0 custom-nav-link margin"
                 data-bs-toggle="pill"
                 id="kt_forms_widget_1_tab_2"
                 href="#kt_forms_widget_1_tab_content_2"
               >
-                <span className="nav-text fw-bold fs-4 mb-3">Tradicional</span>
+                <span className="nav-text fw-bold fs-4 mb-3">
+                  Tradicional</span>
               </a>
             </li>
           </ul>
@@ -206,7 +210,7 @@ function SectionConvert() {
               id="kt_forms_widget_1_tab_content_1"
             >
               <div className="row g-5 g-xl-10 justify-content-evenly">
-                <div className="col-md-4">
+                <div className="col-md-4 p-2 card">
                   <form onSubmit={(event) => handleSubmit(event, 1)}>
                     <CardConvert
                       inputValue={{
@@ -227,7 +231,7 @@ function SectionConvert() {
                     />
                   </form>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 p-2 card">
                   <form onSubmit={(event) => handleSubmit(event, 2)}>
                     <CardConvert
                       inputValue={{
@@ -251,7 +255,7 @@ function SectionConvert() {
               </div>
 
               <div className="row g-5 g-xl-10 justify-content-center mt-2">
-                <div className="col-md-4">
+                <div className="col-md-4 p-2 card">
                   <form onSubmit={(event) => handleSubmit(event, 3)}>
                     <CardConvert
                       inputValue={{

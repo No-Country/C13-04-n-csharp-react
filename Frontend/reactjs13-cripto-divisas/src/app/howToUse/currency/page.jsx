@@ -4,12 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Page() {
     return (
-        <div className="fondo-con-opacidad" style={{
+        <div className="p-1" style={{
             backgroundImage: 'url("/images/graphics/divisas.png")',
             backgroundSize: 'cover',
         }}>
             <div className="container">
-                <h1 class="text-center m-3 fw-bold text-xl">DIVISAS</h1>
+                <h1 class="text-center m-3 fw-bold text-xl neon-text"
+                    style={{ color: "#FF7C03" }}>DIVISAS</h1>
             </div>
 
             <section className="mx-2">

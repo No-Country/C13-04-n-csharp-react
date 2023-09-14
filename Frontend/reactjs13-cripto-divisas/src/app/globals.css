@@ -1,3 +1,83 @@
-* {
-    background: grey;
+body {
+    background-color: #C6C6C6;
+}
+
+.custom-shadow {
+    box-shadow: 0 1px 6px rgba(255, 124, 20, 0.6);
+}
+
+.custom-padding {
+    padding-left: 10rem;
+}
+
+.neon-text {
+    text-shadow: 0 0 10px #C6C6C6, 0 0 20px #C6C6C6, 0 0 30px #C6C6C6;
+}
+
+.custom-button {
+    background-color: #C6C6C6;
+    color: #FF7C03;
+    transition: background-color 0.3s;
+}
+
+.margin{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.custom-button:hover {
+    background-color: #FF7C03;
+    color: #000000;
+}
+
+.nav-link.custom-nav-link {
+    background-color: #C6C6C6 !important;
+    color: #000000 !important;
+    border-radius: 1rem;
+}
+
+
+.nav-link.custom-nav-link:hover {
+    background-color: #FF7C03 !important;
+}
+
+.nav-link.custom-nav-link:focus {
+    background-color: #524F4F !important;
+    color: #ffffff !important;
+}
+
+.nav-link.custom-nav-link:focus:hover {
+    background-color: #FF7C03 !important;
+}
+
+.btn.btn-primary.fs-3.w-100 {
+    background-color: #C6C6C6 !important;
+    color: #000000;
+    font-weight: bold;
+    border: none;
+    border-radius: 1rem;
+}
+
+.btn.btn-primary.fs-3.w-100:hover {
+    background-color: #FF7C03 !important;
+}
+
+.btn.btn-primary.fs-3.w-100:focus {
+    background-color: #524F4F !important;
+    color: #ffffff !important;
+}
+
+.btn.btn-primary.fs-3.w-100:focus:hover {
+    background-color: #FF7C03 !important;
+}
+
+.card{
+    background-color: #C6C6C6;
+}
+
+
+@media (max-width: 767px) {
+    .custom-padding {
+        padding-left: 2rem;
+    }
 }
