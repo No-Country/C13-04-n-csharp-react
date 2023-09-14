@@ -117,7 +117,7 @@ namespace Cripto_divisas.Controllers
         {
             var httpRequestMessage = new HttpRequestMessage(
             HttpMethod.Get,
-         "https://v6.exchangerate-api.com/v6/fb6307f050a82622e7eb88c2/codes");
+         "https://v6.exchangerate-api.com/v6/8bea83afdb3a482395191a05/codes");
 
 
             var httpClient = httpClientFactory.CreateClient();
@@ -170,7 +170,7 @@ namespace Cripto_divisas.Controllers
         {
             var httpRequestMessage = new HttpRequestMessage(
             HttpMethod.Get,
-         "https://v6.exchangerate-api.com/v6/fb6307f050a82622e7eb88c2/codes");
+         "https://v6.exchangerate-api.com/v6/8bea83afdb3a482395191a05/codes");
 
 
             var httpClient = httpClientFactory.CreateClient();
@@ -216,7 +216,7 @@ namespace Cripto_divisas.Controllers
 
             var httpRequestMessage1 = new HttpRequestMessage(
                              HttpMethod.Get,
-                          "https://v6.exchangerate-api.com/v6/fb6307f050a82622e7eb88c2/pair/" + Moneda + "/" + "USD" + "/" + Monto);
+                          "https://v6.exchangerate-api.com/v6/8bea83afdb3a482395191a05/pair/" + Moneda + "/" + "USD" + "/" + Monto);
             var httpClient = httpClientFactory.CreateClient();
             var response1 = await httpClient.SendAsync(httpRequestMessage1); // Cambia la URL a la API externa real
 
@@ -249,7 +249,7 @@ namespace Cripto_divisas.Controllers
                         var totalAskFormatted1 = Monto.ToString("0.####", CultureInfo.InvariantCulture);
                         var httpRequestMessage3 = new HttpRequestMessage(
                                      HttpMethod.Get,
-                                 "https://v6.exchangerate-api.com/v6/fb6307f050a82622e7eb88c2/pair/" + Moneda + "/" + MonedaPais + "/" + totalAskFormatted1);
+                                 "https://v6.exchangerate-api.com/v6/8bea83afdb3a482395191a05/pair/" + Moneda + "/" + MonedaPais + "/" + totalAskFormatted1);
                         var response3 = await httpClient.SendAsync(httpRequestMessage3); // Cambia la URL a la API externa real
 
                         if (response3.IsSuccessStatusCode)
@@ -355,7 +355,7 @@ namespace Cripto_divisas.Controllers
                             }
                             var httpRequestMessage0 = new HttpRequestMessage(
                              HttpMethod.Get,
-                             "https://v6.exchangerate-api.com/v6/fb6307f050a82622e7eb88c2/pair/" + "USD" + "/" + Moneda + "/" + valorNumerico);
+                             "https://v6.exchangerate-api.com/v6/8bea83afdb3a482395191a05/pair/" + "USD" + "/" + Moneda + "/" + valorNumerico);
                             var response0 = await httpClient.SendAsync(httpRequestMessage0); // Cambia la URL a la API externa real
 
                             if (response0.IsSuccessStatusCode)
@@ -368,7 +368,7 @@ namespace Cripto_divisas.Controllers
 
                                 var httpRequestMessage1 = new HttpRequestMessage(
                                              HttpMethod.Get,
-                                         "https://v6.exchangerate-api.com/v6/fb6307f050a82622e7eb88c2/pair/" + Moneda + "/" + MonedaPais + "/" + entero);
+                                         "https://v6.exchangerate-api.com/v6/8bea83afdb3a482395191a05/pair/" + Moneda + "/" + MonedaPais + "/" + entero);
                                 var response1 = await httpClient.SendAsync(httpRequestMessage1); // Cambia la URL a la API externa real
 
                                 if (response1.IsSuccessStatusCode)
@@ -419,7 +419,7 @@ namespace Cripto_divisas.Controllers
                     var totalAskFormatted = responses.totalAsk.ToString("0.####", CultureInfo.InvariantCulture);
                     var httpRequestMessage1 = new HttpRequestMessage(
                                  HttpMethod.Get,
-                             "https://v6.exchangerate-api.com/v6/fb6307f050a82622e7eb88c2/pair/" + Moneda + "/" + MonedaPais + "/" + totalAskFormatted);
+                             "https://v6.exchangerate-api.com/v6/8bea83afdb3a482395191a05/pair/" + Moneda + "/" + MonedaPais + "/" + totalAskFormatted);
                     var response1 = await httpClient.SendAsync(httpRequestMessage1); // Cambia la URL a la API externa real
 
                     if (response1.IsSuccessStatusCode)
@@ -556,7 +556,7 @@ namespace Cripto_divisas.Controllers
                         }
                         var httpRequestMessage3 = new HttpRequestMessage(
                                      HttpMethod.Get,
-                                 "https://v6.exchangerate-api.com/v6/fb6307f050a82622e7eb88c2/pair/" + "USD" + "/" + Moneda + "/" + valorNumerico);
+                                 "https://v6.exchangerate-api.com/v6/8bea83afdb3a482395191a05/pair/" + "USD" + "/" + Moneda + "/" + valorNumerico);
                         var response3 = await httpClient.SendAsync(httpRequestMessage3); // Cambia la URL a la API externa real
 
                         if (response3.IsSuccessStatusCode)
