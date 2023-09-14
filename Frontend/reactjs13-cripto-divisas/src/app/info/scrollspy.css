@@ -1,0 +1,40 @@
+#navbar-input{
+    background-color: #524F4F;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    color:white;
+    max-width: 100%;
+}
+
+#navbar-input:hover {
+    background-color: #FF7C03;
+}
+
+#navbar-input:active {
+    background-color: lightgreen;
+}
+
+#navbar-subinput{
+    color: black;
+}
+
+#images {
+    max-width: 100%;
+    height: auto;
+  }
+
+#tutorial-image{
+    max-width: 50%;
+    height: auto;
+}
+
+#section-right{
+    max-width: 100%;
+}
+
+#navbar-example3{
+        background-image: url('https://img.freepik.com/fotos-premium/fondo-vertical-degradado-lujo-su-diseno-grafico-funciona-espacio-libre-insertar-texto_7954-9823.jpg?w=2000'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta o URL de tu imagen */
+        background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+}

@@ -16,7 +16,6 @@
         font-size: 15px;
         box-shadow: 0 0 0 3px #524F4F;
         font-weight: bolder;
-        cursor: pointer;
         position: relative;
         animation: bounce 1s infinite alternate, glow 2s infinite;
         transition: transform 0.2s ease-in-out;
@@ -41,10 +40,10 @@
   }
 
 #wallets{
-    height: 20vh;
-    width: 25vh;
+    height: 14rem;
+    width: 18rem;
     box-shadow: #524F4F;
-    border-width: 10px;
+    border-width: 0.625rem;
     max-width: 100%;
     background-color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease
@@ -65,7 +64,7 @@
 }
 
 #wallet-left{
-    margin-left: 20vh;
+    margin-left: 15rem;
     position: relative;
 }
 

@@ -107,10 +107,10 @@ function Navbar() {
               <Link
                 className="nav-link active"
                 aria-current="page"
-                href="/send"
+                href="/info"
                 style={{ color: "#FF7C03" }}
               >
-                Enviar
+                Informacion
               </Link>
             </li>
           </ul>

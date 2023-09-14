@@ -1,12 +1,12 @@
 "use client";
-import "../send/scrollspy.css"
+import "./scrollspy.css"
 
 function Scrollpy() {
 
     return (
         <>
             <div className="row">
-                <div className="col-4 mt-1" id="inputs-items">
+                <div className="col-md-4 col-12 mt-1" id="inputs-items">
                     <nav id="navbar-example3" className="h-100 flex-column align-items-stretch pe-4 border-end">
                         <nav className="nav nav-pills flex-column">
                             <a className="nav-link ms-3" id="navbar-input" href="#item-1">¿Para que nos pueden servir las criptomonedas?</a>
@@ -21,14 +21,15 @@ function Scrollpy() {
                             </nav>
                             <a className="nav-link ms-3" id="navbar-input" href="#item-3">Tutoriales</a>
                             <nav className="nav nav-pills flex-column">
-                                <a className="nav-link ms-5 my-1" id="navbar-subinput" href="#item-3-1">Item 3-1</a>
+                                <a className="nav-link ms-5 my-1" id="navbar-subinput" href="#item-3-1">Como comprar USDT</a>
+                                <a className="nav-link ms-5 my-1" id="navbar-subinput" href="#item-3-2">Como vender USDT</a>
                             </nav>
                         </nav>
                     </nav>
                 </div>
 
-                <div className="col-8 mt-3">
-                    <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" className="scrollspy-example-2" tabindex="0">
+                <div className="col-md-8 col-12 mt-3">
+                    <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" className="scrollspy-example-2" tabindex="0" id="section-right">
                         <div id="item-1">
                             <h2>
                                 <strong>
@@ -37,7 +38,6 @@ function Scrollpy() {
                             </h2>
                             <br />
                             <p>Las criptomonedas han emergido como una tecnología financiera disruptiva con una gama diversa de aplicaciones. En primer lugar, sirven como una forma de inversión, permitiendo a las personas comprar y mantener activos digitales con la esperanza de que su valor aumente con el tiempo. Además, las criptomonedas brindan acceso a servicios financieros globales para personas no bancarizadas, democratizando el acceso a la economía global. </p>
-                                <br />
                                 <br />
 
                                 Otro uso fundamental de las criptomonedas es la facilitación de pagos internacionales rápidos y económicos, eliminando intermediarios costosos y tiempos de espera prolongados. Además, son un medio para el desarrollo de contratos inteligentes, que automatizan acuerdos y transacciones sin necesidad de intermediarios. En el ámbito empresarial, las criptomonedas se utilizan para recaudar fondos a través de ICO (Ofertas Iniciales de Monedas) y como un medio eficiente de llevar a cabo transacciones comerciales a nivel internacional.
@@ -48,19 +48,15 @@ function Scrollpy() {
                         </div>
                         <div id="item-1-1">
                             <h3>
-                                <strong>
                                 ¿Qué es el trading con criptomonedas?
-                                </strong>
                             </h3>
                             <br/>
-                            <p>El trading con criptomonedas es una práctica financiera que implica la compra y venta de activos digitales como Bitcoin, Ethereum y otras monedas digitales en diferentes plataformas de intercambio en línea. Los traders buscan beneficiarse de las fluctuaciones en los precios de las criptomonedas, comprando cuando creen que el precio subirá y vendiendo cuando anticipan una caída.
-                                <br />
+                            <p>El trading con criptomonedas es una práctica financiera que implica la compra y venta de activos digitales como Bitcoin, Ethereum y otras monedas digitales en diferentes plataformas de intercambio en línea. Los traders buscan beneficiarse de las fluctuaciones en los precios de las criptomonedas, comprando cuando creen que el precio subirá y vendiendo cuando anticipan una caída. </p>
                                 <br />
                                 El trading de criptomonedas se basa en el análisis técnico y fundamental, donde los traders estudian los gráficos de precios, los indicadores técnicos y los eventos del mercado para tomar decisiones informadas. Es una actividad de alto riesgo debido a la volatilidad inherente en el mercado de las criptomonedas, pero también ofrece oportunidades de ganancias significativas en un corto período de tiempo.
                                 <br />
                                 <br />
-                                Es importante destacar que el trading de criptomonedas requiere educación y experiencia, ya que puede ser complejo y puede llevar a pérdidas financieras considerables si no se realiza con cuidado. Los traders a menudo emplean estrategias como el day trading (operaciones intradía), el swing trading (operaciones a corto y mediano plazo) y el HODLing (mantener a largo plazo) para gestionar sus inversiones y riesgos. Además, la regulación y la seguridad son aspectos cruciales a considerar al involucrarse en el trading de criptomonedas.
-                            </p>
+                                <p>Es importante destacar que el trading de criptomonedas requiere educación y experiencia, ya que puede ser complejo y puede llevar a pérdidas financieras considerables si no se realiza con cuidado. Los traders a menudo emplean estrategias como el day trading (operaciones intradía), el swing trading (operaciones a corto y mediano plazo) y el HODLing (mantener a largo plazo) para gestionar sus inversiones y riesgos. Además, la regulación y la seguridad son aspectos cruciales a considerar al involucrarse en el trading de criptomonedas. </p>
                             <img src="/images/cryptos1.jpg" alt="123" id="images">
 
                             </img>
@@ -69,7 +65,7 @@ function Scrollpy() {
                             <br/>
                             <h3> ¿Se puede enviar remesas con criptomonedas?</h3>
                             <br/>
-                            <p>El envío de remesas a través de criptomonedas es una realidad cada vez más viable debido a varias ventajas significativas que ofrecen estas monedas digitales. Aquí se explican algunas de las razones por las cuales es posible y beneficioso utilizar criptomonedas para el envío de remesas:
+                            <p>El envío de remesas a través de criptomonedas es una realidad cada vez más viable debido a varias ventajas significativas que ofrecen estas monedas digitales. Aquí se explican algunas de las razones por las cuales es posible y beneficioso utilizar criptomonedas para el envío de remesas: </p>
                                 <ul>
                                     <br/>
                                     <li>
@@ -100,14 +96,12 @@ function Scrollpy() {
                                     <strong>Menos Dependencia de Intermediarios: </strong> Las transferencias de criptomonedas se realizan directamente entre las partes involucradas, lo que elimina la necesidad de intermediarios financieros costosos y lentos. Esto reduce la cantidad de manos por las que pasa el dinero, disminuyendo así las posibilidades de pérdidas o demoras
                                     </li>
                                 </ul>
-                            </p>
                         </div>
                         <div id="item-2">
                         <br/>
-                            <h4>Envio de remesas con criptomonedas</h4>
+                            <h2><strong>Envio de remesas con criptomonedas</strong></h2>
                             <br/>
-                            <p> Sin lugar a dudas, las criptomonedas han emergido como una opción altamente eficiente y beneficiosa para enviar remesas a nivel global. Este nuevo paradigma en el mundo financiero ha transformado la forma en que las personas pueden transferir dinero a sus seres queridos en el extranjero, ofreciendo ventajas significativas sobre los métodos tradicionales de envío de dinero.
-                            <br/>
+                            <p> Sin lugar a dudas, las criptomonedas han emergido como una opción altamente eficiente y beneficiosa para enviar remesas a nivel global. Este nuevo paradigma en el mundo financiero ha transformado la forma en que las personas pueden transferir dinero a sus seres queridos en el extranjero, ofreciendo ventajas significativas sobre los métodos tradicionales de envío de dinero.</p>
                             <br/>
 En primer lugar, la rapidez es una de las ventajas más notables de las criptomonedas en el contexto de las remesas. Mientras que las transferencias bancarias internacionales pueden llevar días en completarse debido a la intermediación de múltiples instituciones financieras y la necesidad de cumplir con regulaciones internacionales, las transacciones con criptomonedas se realizan de forma casi instantánea. Esto significa que el destinatario puede recibir los fondos en cuestión de minutos, en lugar de esperar días o incluso semanas.
 <br/>
@@ -124,16 +118,15 @@ La seguridad y la transparencia inherentes a la tecnología blockchain, en la qu
 Por último, pero no menos importante, las criptomonedas ofrecen la posibilidad de evitar las restricciones gubernamentales y las fluctuaciones de las tasas de cambio. Algunos países imponen límites en la cantidad de dinero que se puede enviar como remesa, o las tasas de cambio pueden variar significativamente, lo que puede afectar negativamente la cantidad final que recibe el destinatario. Las criptomonedas permiten a las personas eludir estas restricciones y minimizar el impacto de las fluctuaciones cambiarias.
 <br/>
 <br/>
-En resumen, las criptomonedas se han convertido en una opción atractiva para enviar remesas debido a su rapidez, accesibilidad, reducción de costos, seguridad y capacidad para eludir restricciones gubernamentales. A medida que esta tecnología continúa evolucionando y ganando aceptación, es probable que juegue un papel cada vez más importante en el ámbito de las transferencias de dinero internacionales.</p>
+<p>En resumen, las criptomonedas se han convertido en una opción atractiva para enviar remesas debido a su rapidez, accesibilidad, reducción de costos, seguridad y capacidad para eludir restricciones gubernamentales. A medida que esta tecnología continúa evolucionando y ganando aceptación, es probable que juegue un papel cada vez más importante en el ámbito de las transferencias de dinero internacionales.</p>
 <img src="/images/cryptos2.jpg" alt="123" id="images">
 
 </img>
                         </div>
                         <div id="item-2-1">
                             <br/>
-                            <h4>Por donde enviar criptomonedas?</h4>
+                            <h3>Por donde enviar criptomonedas?</h3>
                             <br/>
-                            <p>
                                 <ul>
                                     <li>
                                     Binance
@@ -167,12 +160,11 @@ En resumen, las criptomonedas se han convertido en una opción atractiva para en
                                     </li>
                                 </ul>
                             <br/>
-                            Estos exchanges permiten a los usuarios comprar, vender y transferir criptomonedas, lo que podría ser útil para enviar remesas internacionales de manera eficiente y económica. Sin embargo, ten en cuenta que los costos y las regulaciones pueden variar según el exchange y la ubicación geográfica, por lo que es importante investigar y entender las tarifas y regulaciones específicas antes de realizar una transferencia. Además, asegúrate de que el destinatario esté familiarizado con el uso de criptomonedas y pueda convertirlas en la moneda local si es necesario.
-                            </p>
+                           <p> Estos exchanges permiten a los usuarios comprar, vender y transferir criptomonedas, lo que podría ser útil para enviar remesas internacionales de manera eficiente y económica. Sin embargo, ten en cuenta que los costos y las regulaciones pueden variar según el exchange y la ubicación geográfica, por lo que es importante investigar y entender las tarifas y regulaciones específicas antes de realizar una transferencia. Además, asegúrate de que el destinatario esté familiarizado con el uso de criptomonedas y pueda convertirlas en la moneda local si es necesario.</p>
                         </div>
                         <div id="item-2-2">
-                            <h4>Mejores criptos para el envio de remesas</h4>
-                            <p>La elección de la criptomoneda más recomendada para el envío de remesas puede depender de varios factores, incluyendo la velocidad de la transacción, las tarifas, la disponibilidad en la región y la facilidad de conversión a moneda local. Aquí hay algunas criptomonedas populares que a menudo se consideran adecuadas para enviar remesas:
+                            <h3>Mejores criptos para el envio de remesas</h3>
+                            <p>La elección de la criptomoneda más recomendada para el envío de remesas puede depender de varios factores, incluyendo la velocidad de la transacción, las tarifas, la disponibilidad en la región y la facilidad de conversión a moneda local. Aquí hay algunas criptomonedas populares que a menudo se consideran adecuadas para enviar remesas:</p>
                             <br/>
                             <ul>
                                 <li>
@@ -204,25 +196,29 @@ En resumen, las criptomonedas se han convertido en una opción atractiva para en
                                 </li>
                             </ul>
 
-La elección final dependerá de tus preferencias personales, las tarifas y la infraestructura disponible en tu ubicación, así como de las necesidades del destinatario. Además, ten en cuenta que las criptomonedas son volátiles, por lo que los precios pueden fluctuar antes de que el destinatario las convierta a moneda local. Siempre es aconsejable investigar y comparar las opciones disponibles antes de realizar una transferencia de remesas en criptomonedas.</p>
+<p>La elección final dependerá de tus preferencias personales, las tarifas y la infraestructura disponible en tu ubicación, así como de las necesidades del destinatario. Además, ten en cuenta que las criptomonedas son volátiles, por lo que los precios pueden fluctuar antes de que el destinatario las convierta a moneda local. Siempre es aconsejable investigar y comparar las opciones disponibles antes de realizar una transferencia de remesas en criptomonedas.</p>
                         </div>
                         <div id="item-3">
-                            <h3>Tutoriales</h3>
+                            <h2><strong>Tutoriales </strong></h2>
                             <p>En un mundo cada vez más globalizado, las criptomonedas están desempeñando un papel fundamental en la simplificación y agilización del proceso de envío de remesas internacionales. Este conjunto de tutoriales está diseñado para ayudarte a comprender y utilizar de manera efectiva las criptomonedas como una alternativa segura, rápida y económica para enviar dinero a tus seres queridos en cualquier parte del mundo.</p>
                         </div>
                         <div id="item-3-1">
-                            <h5>Item 3-1</h5>
-                            <p>   Hola 
+                            <h5>Acá puedes aprender como comprar USDT a través de la plataforma Bybit:</h5>
+                            <br/> 
                                 
                                 <a href='https://youtu.be/tXF8SqUs5MA' target="_blank" rel="noopener noreferrer">
-                                    <h4>Soy un link a youtube</h4>
+                                    <img src="/images/buyusdt.jpg" alt="123" id="tutorial-image"></img>
     </a>
-    </p>
 
                         </div>
+                        <br/>
                         <div id="item-3-2">
-                            <h5>Item 3-2</h5>
-                            <p>...</p>
+                            <h5>Acá puedes aprender como vender USDT a través de la platadforma de Bybit:</h5>
+                            <br/>
+
+                            <a href='https://youtu.be/tXF8SqUs5MA' target="_blank" rel="noopener noreferrer">
+                                    <img src="/images/sellusdt.jpg" alt="123" id="tutorial-image"></img>
+    </a>
                         </div>
                     </div>
                 </div>
