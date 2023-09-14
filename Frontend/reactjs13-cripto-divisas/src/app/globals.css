@@ -1,3 +1,32 @@
-* {
-    background: grey;
+body {
+    background-color: #C6C6C6;
+}
+
+.custom-shadow {
+    box-shadow: 0 1px 6px rgba(255, 124, 20, 0.6);
+}
+
+.custom-padding {
+    padding-left: 10rem;
+}
+
+.neon-text {
+    text-shadow: 0 0 10px #C6C6C6, 0 0 20px #C6C6C6, 0 0 30px #C6C6C6;
+}
+
+.custom-button {
+    background-color: #C6C6C6;
+    color: #FF7C03;
+    transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #FF7C03;
+    color: black;
+}
+
+@media (max-width: 767px) {
+    .custom-padding {
+        padding-left: 2rem;
+    }
 }

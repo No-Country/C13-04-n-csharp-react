@@ -9,7 +9,7 @@ function Navbar() {
 
   return (
     <nav
-      className="navbar navbar-expand-lg "
+      className="navbar navbar-expand-lg custom-shadow"
       style={{ backgroundColor: "#524F4F" }}
     >
       <div className="container-fluid">
@@ -35,8 +35,8 @@ function Navbar() {
         </button>
 
         <div className="collapse navbar-collapse " id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0"
-            style={{ paddingLeft: '10rem', fontSize: '20px' }}>
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0 custom-padding"
+            style={{ fontSize: '20px' }}>
             <li className="nav-item mx-5">
               <Link
                 className="nav-link active"
@@ -50,7 +50,7 @@ function Navbar() {
             <li className="nav-item mx-5">
               <Link
                 className="nav-link"
-                href="/news"
+                href="/newsPage"
                 style={{ color: "#FF7C03" }}
               >
                 Noticias
@@ -107,7 +107,7 @@ function Navbar() {
               <Link
                 className="nav-link active"
                 aria-current="page"
-                href="/convert"
+                href="/"
                 style={{ color: "#FF7C03" }}
               >
                 Enviar
