@@ -36,7 +36,7 @@ function Scrollpy() {
                                 </strong>
                             </h2>
                             <br />
-                            <p>Las criptomonedas han emergido como una tecnología financiera disruptiva con una gama diversa de aplicaciones. En primer lugar, sirven como una forma de inversión, permitiendo a las personas comprar y mantener activos digitales con la esperanza de que su valor aumente con el tiempo. Además, las criptomonedas brindan acceso a servicios financieros globales para personas no bancarizadas, democratizando el acceso a la economía global.
+                            <p>Las criptomonedas han emergido como una tecnología financiera disruptiva con una gama diversa de aplicaciones. En primer lugar, sirven como una forma de inversión, permitiendo a las personas comprar y mantener activos digitales con la esperanza de que su valor aumente con el tiempo. Además, las criptomonedas brindan acceso a servicios financieros globales para personas no bancarizadas, democratizando el acceso a la economía global. </p>
                                 <br />
                                 <br />
 
@@ -44,7 +44,7 @@ function Scrollpy() {
 
                                 <br />
                                 <br />
-                                En resumen, las criptomonedas están cambiando la forma en que entendemos y utilizamos el dinero, abriendo un abanico de oportunidades en las finanzas, la tecnología y la economía global</p>
+                                <p>En resumen, las criptomonedas están cambiando la forma en que entendemos y utilizamos el dinero, abriendo un abanico de oportunidades en las finanzas, la tecnología y la economía global</p>
                         </div>
                         <div id="item-1-1">
                             <h3>
@@ -103,56 +103,69 @@ function Scrollpy() {
                             </p>
                         </div>
                         <div id="item-2">
+                        <br/>
                             <h4>Envio de remesas con criptomonedas</h4>
-                            <p> Enviar remesas con criptomonedas es una elección beneficiosa por varias razones:
-                                <br />
-                                <br />
-                                Rapidez: Las criptomonedas permiten transferencias instantáneas en comparación con los métodos tradicionales más lentos.
-                                <br />
-                                <br />
-                                Menores Costos: Las tarifas son considerablemente más bajas, lo que significa que más dinero llega a su destino.
-                                <br />
-                                <br />
-                                Accesibilidad Global: Cualquier persona con acceso a Internet puede utilizar criptomonedas, eliminando las barreras geográficas.
-                                <br />
-                                <br />
-                                Seguridad: La tecnología blockchain las hace seguras y transparentes, reduciendo el riesgo de fraudes.
-                                <br />
-                                <br />
-                                Inclusión Financiera: Las criptomonedas brindan acceso a servicios financieros a personas no bancarizadas.
-                                <br />
-                                <br />
-                                Menos Intermediarios: Las transferencias se realizan directamente, eliminando intermediarios costosos y lentos.
-                                <br />
-                                <br />
-                                Variedad de Opciones: Existe una variedad de criptomonedas para elegir, adaptándose a diferentes necesidades.
-                                <br />
-                                <br />
-                                A pesar de estas ventajas, ten en cuenta la volatilidad y asegúrate de comprender los riesgos antes de usar criptomonedas para remesas. En resumen, las criptomonedas ofrecen una alternativa eficiente y accesible para enviar dinero a nivel internacional.</p>
+                            <br/>
+                            <p> Sin lugar a dudas, las criptomonedas han emergido como una opción altamente eficiente y beneficiosa para enviar remesas a nivel global. Este nuevo paradigma en el mundo financiero ha transformado la forma en que las personas pueden transferir dinero a sus seres queridos en el extranjero, ofreciendo ventajas significativas sobre los métodos tradicionales de envío de dinero.
+                            <br/>
+                            <br/>
+En primer lugar, la rapidez es una de las ventajas más notables de las criptomonedas en el contexto de las remesas. Mientras que las transferencias bancarias internacionales pueden llevar días en completarse debido a la intermediación de múltiples instituciones financieras y la necesidad de cumplir con regulaciones internacionales, las transacciones con criptomonedas se realizan de forma casi instantánea. Esto significa que el destinatario puede recibir los fondos en cuestión de minutos, en lugar de esperar días o incluso semanas.
+<br/>
+<br/>
+La accesibilidad también es un factor clave que hace que las criptomonedas sean una excelente opción para enviar remesas. Para utilizar criptomonedas, no es necesario tener una cuenta bancaria, una tarjeta de crédito o una identificación oficial. Todo lo que se necesita es un dispositivo con acceso a Internet y una billetera digital, lo que facilita enormemente el proceso para las personas no bancarizadas o que enfrentan dificultades para abrir cuentas en el sistema financiero tradicional.
+<br/>
+<br/>
+Otra ventaja importante es la reducción de costos. Las tarifas asociadas con las transferencias internacionales de dinero a través de bancos y servicios de remesas tradicionales pueden ser elevadas, con porcentajes significativos que se restan del monto total enviado. En contraste, las tarifas de transacción de criptomonedas suelen ser mucho más bajas en comparación, lo que significa que el destinatario recibe una mayor cantidad de dinero.
+<br/>
+<br/>
+La seguridad y la transparencia inherentes a la tecnología blockchain, en la que se basan las criptomonedas, también son aspectos destacados. Las transacciones de criptomonedas se registran en un libro de contabilidad público e inmutable, lo que garantiza la transparencia y reduce el riesgo de fraudes y manipulaciones. Además, la encriptación y la seguridad cibernética avanzada de las criptomonedas proporcionan un nivel adicional de protección para los fondos transferidos.
+<br/>
+<br/>
+Por último, pero no menos importante, las criptomonedas ofrecen la posibilidad de evitar las restricciones gubernamentales y las fluctuaciones de las tasas de cambio. Algunos países imponen límites en la cantidad de dinero que se puede enviar como remesa, o las tasas de cambio pueden variar significativamente, lo que puede afectar negativamente la cantidad final que recibe el destinatario. Las criptomonedas permiten a las personas eludir estas restricciones y minimizar el impacto de las fluctuaciones cambiarias.
+<br/>
+<br/>
+En resumen, las criptomonedas se han convertido en una opción atractiva para enviar remesas debido a su rapidez, accesibilidad, reducción de costos, seguridad y capacidad para eludir restricciones gubernamentales. A medida que esta tecnología continúa evolucionando y ganando aceptación, es probable que juegue un papel cada vez más importante en el ámbito de las transferencias de dinero internacionales.</p>
+<img src="/images/cryptos2.jpg" alt="123" id="images">
+
+</img>
                         </div>
                         <div id="item-2-1">
+                            <br/>
                             <h4>Por donde enviar criptomonedas?</h4>
+                            <br/>
                             <p>
-                            Binance
-                            <br/>
-                            Coinbase
-                            <br/>
-                            Kraken
-                            <br/>
-                            Bitstamp
-                            <br/>
-                            Bitfinex
-                            <br/>
-                            Gemini
-                            <br/>
-                            Bittrex
-                            <br/>
-                            OKEx
-                            <br/>
-                            Huobi
-                            <br/>
-                            BitFlyer
-                            <br/>
+                                <ul>
+                                    <li>
+                                    Binance
+                                    </li>
+                                    <li>
+                                    Coinbase
+                                    </li>
+                                    <li>
+                                    Kraken
+                                    </li>
+                                    <li>
+                                    Bitstamp
+                                    </li>
+                                    <li>
+                                    Bitfinex
+                                    </li>
+                                    <li>
+                                    Gemini
+                                    </li>
+                                    <li>
+                                    Bittrex
+                                    </li>
+                                    <li>
+                                    OKEx
+                                    </li>
+                                    <li>
+                                    Huobi
+                                    </li>
+                                    <li>
+                                    Bybit
+                                    </li>
+                                </ul>
                             <br/>
                             Estos exchanges permiten a los usuarios comprar, vender y transferir criptomonedas, lo que podría ser útil para enviar remesas internacionales de manera eficiente y económica. Sin embargo, ten en cuenta que los costos y las regulaciones pueden variar según el exchange y la ubicación geográfica, por lo que es importante investigar y entender las tarifas y regulaciones específicas antes de realizar una transferencia. Además, asegúrate de que el destinatario esté familiarizado con el uso de criptomonedas y pueda convertirlas en la moneda local si es necesario.
                             </p>
@@ -161,24 +174,36 @@ function Scrollpy() {
                             <h4>Mejores criptos para el envio de remesas</h4>
                             <p>La elección de la criptomoneda más recomendada para el envío de remesas puede depender de varios factores, incluyendo la velocidad de la transacción, las tarifas, la disponibilidad en la región y la facilidad de conversión a moneda local. Aquí hay algunas criptomonedas populares que a menudo se consideran adecuadas para enviar remesas:
                             <br/>
-Bitcoin (BTC): Bitcoin es ampliamente aceptado y tiene una gran liquidez en la mayoría de los exchanges. Sin embargo, las tarifas de transacción pueden variar y a veces son altas.
-<br/>
-Ethereum (ETH): Ethereum es conocido por su rapidez en las transacciones y su amplia adopción. Puede ser una opción eficiente para remesas.
-<br/>
-Stellar (XLM): Stellar se creó específicamente con la intención de facilitar las transferencias de dinero transfronterizas. Ofrece tarifas bajas y tiempos de confirmación rápidos.
-<br/>
-Ripple (XRP): Ripple es otra criptomoneda diseñada para transferencias internacionales de dinero, y su red se utiliza en muchas instituciones financieras.
-<br/>
-Litecoin (LTC): Litecoin ofrece transacciones más rápidas y tarifas más bajas en comparación con Bitcoin, lo que lo hace atractivo para remesas.
-<br/>
-Bitcoin Cash (BCH): Bitcoin Cash se centra en la escalabilidad y las tarifas bajas, lo que lo convierte en una opción viable para remesas.
-<br/>
-Tether (USDT): Tether es una criptomoneda estable vinculada al valor del dólar estadounidense. Puede ser útil para evitar la volatilidad de otras criptomonedas durante la transferencia.
-<br/>
-USD Coin (USDC): Similar a Tether, USD Coin es una criptomoneda estable respaldada por dólares estadounidenses.
-<br/>
-Dai (DAI): Dai es una criptomoneda estable descentralizada que mantiene su valor mediante la colateralización. Puede ser una opción interesante para la estabilidad.
-<br/>
+                            <ul>
+                                <li>
+                                <strong>Bitcoin (BTC): </strong>Bitcoin es ampliamente aceptado y tiene una gran liquidez en la mayoría de los exchanges. Sin embargo, las tarifas de transacción pueden variar y a veces son altas.
+                                </li>
+                                <li>
+                                <strong>Ethereum (ETH):</strong> Ethereum es conocido por su rapidez en las transacciones y su amplia adopción. Puede ser una opción eficiente para remesas.
+                                </li>
+                                <li>
+                                <strong>Stellar (XLM):</strong> Stellar se creó específicamente con la intención de facilitar las transferencias de dinero transfronterizas. Ofrece tarifas bajas y tiempos de confirmación rápidos.
+                                </li>
+                                <li>
+                                <strong>Ripple (XRP): </strong> Ripple es otra criptomoneda diseñada para transferencias internacionales de dinero, y su red se utiliza en muchas instituciones financieras.
+                                </li>
+                                <li>
+                                <strong>Litecoin (LTC): </strong> Litecoin ofrece transacciones más rápidas y tarifas más bajas en comparación con Bitcoin, lo que lo hace atractivo para remesas.
+                                </li>
+                                <li>
+                                <strong>Bitcoin Cash (BCH): </strong> Bitcoin Cash se centra en la escalabilidad y las tarifas bajas, lo que lo convierte en una opción viable para remesas.
+                                </li>
+                                <li>
+                                <strong>Tether (USDT): </strong>Tether es una criptomoneda estable vinculada al valor del dólar estadounidense. Puede ser útil para evitar la volatilidad de otras criptomonedas durante la transferencia.
+                                </li>
+                                <li>
+                                <strong>USD Coin (USDC): </strong> Similar a Tether, USD Coin es una criptomoneda estable respaldada por dólares estadounidenses.
+                                </li>
+                                <li>
+                                <strong>Dai (DAI): </strong> Dai es una criptomoneda estable descentralizada que mantiene su valor mediante la colateralización. Puede ser una opción interesante para la estabilidad.
+                                </li>
+                            </ul>
+
 La elección final dependerá de tus preferencias personales, las tarifas y la infraestructura disponible en tu ubicación, así como de las necesidades del destinatario. Además, ten en cuenta que las criptomonedas son volátiles, por lo que los precios pueden fluctuar antes de que el destinatario las convierta a moneda local. Siempre es aconsejable investigar y comparar las opciones disponibles antes de realizar una transferencia de remesas en criptomonedas.</p>
                         </div>
                         <div id="item-3">
